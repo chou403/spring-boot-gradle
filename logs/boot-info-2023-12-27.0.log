@@ -1,0 +1,427 @@
+2023-12-26 18:29:07.118 INFO [main] io.chou401.user.UserApplication            :55 [][] Starting UserApplication using Java 1.8.0_371 on ChouChou-2.local with PID 36365 (/Users/chouchou/development/owner/spring-boot-plus-new/user/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 18:29:07.118 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 18:29:07.120 INFO [main] io.chou401.user.UserApplication            :638 [][] The following 1 profile is active: "dev"
+2023-12-26 18:29:08.010 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 18:29:08.012 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 18:29:08.032 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-12-26 18:29:08.818 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8093 (http)
+2023-12-26 18:29:08.822 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8093"]
+2023-12-26 18:29:08.823 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 18:29:08.823 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 18:29:08.942 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 18:29:08.943 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1749 ms
+2023-12-26 18:29:09.054 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 18:29:09.317 WARN [main] ConfigServletWebServerApplicationContext:599 [][] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userAppController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/user/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'
+2023-12-26 18:29:09.322 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Stopping service [Tomcat]
+2023-12-26 18:29:09.340 INFO [main] ConditionEvaluationReportLoggingListener:136 [][] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-12-26 18:29:09.358ERROR [main] o.s.boot.SpringApplication              :818 [][] Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userAppController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/user/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:929)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at io.chou401.user.UserApplication.main(UserApplication.java:18)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/user/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/user/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+	... 34 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:633)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	... 58 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:572)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:440)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:605)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 59 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/chouchou/development/owner/spring-boot-plus-new/user/build/resources/main/mapper/UserMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'io.chou401.common.vo.user.UserVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.user.UserVo
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:128)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:570)
+	... 67 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'io.chou401.common.vo.user.UserVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.user.UserVo
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:144)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:136)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:126)
+	... 69 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'io.chou401.common.vo.user.UserVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.user.UserVo
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:150)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 73 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.user.UserVo
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 75 common frames omitted
+
+2023-12-26 23:14:48.573 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 23:14:48.575 INFO [main] io.chou401.user.UserApplication            :55 [][] Starting UserApplication using Java 1.8.0_371 on ChouChou-2.local with PID 72022 (/Users/chouchou/development/owner/spring-boot-plus-new/user/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 23:14:48.576 INFO [main] io.chou401.user.UserApplication            :638 [][] The following 1 profile is active: "dev"
+2023-12-26 23:14:49.501 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 23:14:49.504 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 23:14:49.523 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-12-26 23:14:50.332 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8093 (http)
+2023-12-26 23:14:50.336 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:14:50.336 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 23:14:50.337 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 23:14:50.451 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 23:14:50.451 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1801 ms
+2023-12-26 23:14:50.568 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 23:14:51.264 INFO [main] i.c.f.redis.CustomStringRedisSerializer :19 [][] redisKeyPrefix:boot
+2023-12-26 23:14:51.420 INFO [main] i.c.f.s.impl.LoginRedisAppServiceImpl   :39 [][] loginAppProperties = LoginAppProperties(enable=true, singleLogin=false, tokenExpireDays=30, loginPermission=false, includePaths=[/app/**])
+2023-12-26 23:14:51.422 INFO [main] i.c.f.s.impl.LoginRedisServiceImpl      :39 [][] loginAdminProperties = LoginAdminProperties(enable=true, singleLogin=false, tokenExpireMinutes=60, loginPermission=false, includePaths=[/admin/**], excludePaths=[/admin/login])
+2023-12-26 23:14:51.425ERROR [main] io.chou401.framework.utils.IpRegionUtil    :49 [][] 加载ip2region.xdb异常
+2023-12-26 23:14:51.428 INFO [main] io.chou401.framework.utils.api.WxMpApi     :27 [][] wxMpProperties:WxMpProperties(appid=, secret=)
+2023-12-26 23:14:51.437 INFO [main] i.c.framework.config.MybatisPlusConfig  :54 [][] merchantLineProperties:MerchantLineProperties(merchantIdColumn=merchant_id, includeTables=[demo_product])
+2023-12-26 23:14:52.589 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Starting ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:14:52.614 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :220 [][] Tomcat started on port(s): 8093 (http) with context path '/api'
+2023-12-26 23:14:52.635 INFO [main] io.chou401.user.UserApplication            :61 [][] Started UserApplication in 4.524 seconds (JVM running for 5.234)
+2023-12-26 23:14:53.142 INFO [main] io.chou401.framework.runner.YitIdRunner    :26 [][] YitId配置初始化完成，workerId：0
+2023-12-26 23:16:04.324 INFO [http-nio-8093-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 23:16:04.327 INFO [http-nio-8093-exec-3] o.s.web.servlet.DispatcherServlet       :525 [][] Initializing Servlet 'dispatcherServlet'
+2023-12-26 23:16:04.336 INFO [http-nio-8093-exec-3] o.s.web.servlet.DispatcherServlet       :547 [][] Completed initialization in 7 ms
+2023-12-26 23:16:05.023 INFO [http-nio-8093-exec-19] o.springdoc.api.AbstractOpenApiResource :367 [497530317742085][127.0.0.1] Init duration for springdoc-openapi is: 272 ms
+2023-12-26 23:18:52.665 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 23:18:52.665 INFO [main] io.chou401.system.SystemApplication        :55 [][] Starting SystemApplication using Java 1.8.0_371 on ChouChou-2.local with PID 72808 (/Users/chouchou/development/owner/spring-boot-plus-new/system/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 23:18:52.668 INFO [main] io.chou401.system.SystemApplication        :638 [][] The following 1 profile is active: "dev"
+2023-12-26 23:18:53.619 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 23:18:53.622 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 23:18:53.645 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2023-12-26 23:18:54.406 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8092 (http)
+2023-12-26 23:18:54.410 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8092"]
+2023-12-26 23:18:54.411 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 23:18:54.411 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 23:18:54.520 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 23:18:54.520 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1764 ms
+2023-12-26 23:18:54.625 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 23:18:54.897 WARN [main] ConfigServletWebServerApplicationContext:599 [][] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigController': Unsatisfied dependency expressed through field 'sysConfigService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/sys/SysConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'
+2023-12-26 23:18:54.901 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Stopping service [Tomcat]
+2023-12-26 23:18:54.920 INFO [main] ConditionEvaluationReportLoggingListener:136 [][] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-12-26 23:18:54.936ERROR [main] o.s.boot.SpringApplication              :818 [][] Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigController': Unsatisfied dependency expressed through field 'sysConfigService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/sys/SysConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:929)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at io.chou401.system.SystemApplication.main(SystemApplication.java:18)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/sys/SysConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysConfigMapper' defined in file [/Users/chouchou/development/owner/spring-boot-plus-new/common/build/classes/java/main/io/chou/common/mapper/sys/SysConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+	... 34 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:633)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	... 58 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:572)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:440)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:605)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 59 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/chouchou/development/owner/spring-boot-plus-new/system/build/resources/main/mapper/SysConfigMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'io.chou401.common.vo.system.SysConfigVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.system.SysConfigVo
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:128)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:570)
+	... 67 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'io.chou401.common.vo.system.SysConfigVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.system.SysConfigVo
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:144)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:136)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:126)
+	... 69 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'io.chou401.common.vo.system.SysConfigVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.system.SysConfigVo
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:150)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 73 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: io.chou401.common.vo.system.SysConfigVo
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 75 common frames omitted
+
+2023-12-26 23:20:43.487 INFO [main] io.chou401.system.SystemApplication        :55 [][] Starting SystemApplication using Java 1.8.0_371 on ChouChou-2.local with PID 73179 (/Users/chouchou/development/owner/spring-boot-plus-new/system/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 23:20:43.488 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 23:20:43.489 INFO [main] io.chou401.system.SystemApplication        :638 [][] The following 1 profile is active: "dev"
+2023-12-26 23:20:44.406 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 23:20:44.408 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 23:20:44.428 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-12-26 23:20:45.200 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8092 (http)
+2023-12-26 23:20:45.203 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8092"]
+2023-12-26 23:20:45.204 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 23:20:45.204 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 23:20:45.315 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 23:20:45.315 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1750 ms
+2023-12-26 23:20:45.420 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 23:20:46.874 INFO [main] i.c.f.redis.CustomStringRedisSerializer :19 [][] redisKeyPrefix:boot
+2023-12-26 23:20:46.904 INFO [main] i.c.f.s.impl.LoginRedisServiceImpl      :39 [][] loginAdminProperties = LoginAdminProperties(enable=true, singleLogin=false, tokenExpireMinutes=60, loginPermission=false, includePaths=[/admin/**], excludePaths=[/admin/login])
+2023-12-26 23:20:46.994 INFO [main] i.c.f.s.impl.LoginRedisAppServiceImpl   :39 [][] loginAppProperties = LoginAppProperties(enable=true, singleLogin=false, tokenExpireDays=30, loginPermission=false, includePaths=[/app/**])
+2023-12-26 23:20:47.005 INFO [main] io.chou401.framework.utils.IpRegionUtil    :47 [][] 加载ip2region.xdb成功
+2023-12-26 23:20:47.009 INFO [main] io.chou401.framework.utils.api.WxMpApi     :27 [][] wxMpProperties:WxMpProperties(appid=, secret=)
+2023-12-26 23:20:47.016 INFO [main] i.c.framework.config.MybatisPlusConfig  :54 [][] merchantLineProperties:MerchantLineProperties(merchantIdColumn=merchant_id, includeTables=[demo_product])
+2023-12-26 23:20:47.986 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Starting ProtocolHandler ["http-nio-8092"]
+2023-12-26 23:20:48.010 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :220 [][] Tomcat started on port(s): 8092 (http) with context path '/api'
+2023-12-26 23:20:48.023 INFO [main] io.chou401.system.SystemApplication        :61 [][] Started SystemApplication in 4.975 seconds (JVM running for 5.435)
+2023-12-26 23:20:48.532 INFO [main] io.chou401.framework.runner.YitIdRunner    :26 [][] YitId配置初始化完成，workerId：0
+2023-12-26 23:20:55.640 INFO [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 23:20:55.641 INFO [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet       :525 [][] Initializing Servlet 'dispatcherServlet'
+2023-12-26 23:20:55.648 INFO [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet       :547 [][] Completed initialization in 7 ms
+2023-12-26 23:20:56.668 INFO [http-nio-8092-exec-16] o.springdoc.api.AbstractOpenApiResource :367 [497531511402501][127.0.0.1] Init duration for springdoc-openapi is: 488 ms
+2023-12-26 23:26:45.884 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 23:26:45.887 INFO [main] io.chou401.user.UserApplication            :55 [][] Starting UserApplication using Java 1.8.0_371 on ChouChou-2.local with PID 74396 (/Users/chouchou/development/owner/spring-boot-plus-new/user/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 23:26:45.887 INFO [main] io.chou401.user.UserApplication            :638 [][] The following 1 profile is active: "dev"
+2023-12-26 23:26:46.921 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 23:26:46.924 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 23:26:46.946 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-12-26 23:26:47.812 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8093 (http)
+2023-12-26 23:26:47.816 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:26:47.817 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 23:26:47.817 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 23:26:47.959 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 23:26:47.960 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1989 ms
+2023-12-26 23:26:48.112 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 23:26:48.811 INFO [main] i.c.f.redis.CustomStringRedisSerializer :19 [][] redisKeyPrefix:boot
+2023-12-26 23:26:48.975 INFO [main] i.c.f.s.impl.LoginRedisAppServiceImpl   :39 [][] loginAppProperties = LoginAppProperties(enable=true, singleLogin=false, tokenExpireDays=30, loginPermission=false, includePaths=[/app/**])
+2023-12-26 23:26:48.976 INFO [main] i.c.f.s.impl.LoginRedisServiceImpl      :39 [][] loginAdminProperties = LoginAdminProperties(enable=true, singleLogin=false, tokenExpireMinutes=60, loginPermission=false, includePaths=[/admin/**], excludePaths=[/admin/login])
+2023-12-26 23:26:48.979ERROR [main] io.chou401.framework.utils.IpRegionUtil    :49 [][] 加载ip2region.xdb异常
+2023-12-26 23:26:48.982 INFO [main] io.chou401.framework.utils.api.WxMpApi     :27 [][] wxMpProperties:WxMpProperties(appid=, secret=)
+2023-12-26 23:26:48.994 INFO [main] i.c.framework.config.MybatisPlusConfig  :54 [][] merchantLineProperties:MerchantLineProperties(merchantIdColumn=merchant_id, includeTables=[demo_product])
+2023-12-26 23:26:50.094 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Starting ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:26:50.119 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :220 [][] Tomcat started on port(s): 8093 (http) with context path '/api'
+2023-12-26 23:26:50.134 INFO [main] io.chou401.user.UserApplication            :61 [][] Started UserApplication in 4.767 seconds (JVM running for 5.446)
+2023-12-26 23:26:50.643 INFO [main] io.chou401.framework.runner.YitIdRunner    :26 [][] YitId配置初始化完成，workerId：0
+2023-12-26 23:27:02.174 INFO [http-nio-8093-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 23:27:02.175 INFO [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet       :525 [][] Initializing Servlet 'dispatcherServlet'
+2023-12-26 23:27:02.179 INFO [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet       :547 [][] Completed initialization in 4 ms
+2023-12-26 23:27:02.810 INFO [http-nio-8093-exec-2] o.springdoc.api.AbstractOpenApiResource :367 [497533011980293][127.0.0.1] Init duration for springdoc-openapi is: 278 ms
+2023-12-26 23:30:18.742 INFO [http-nio-8093-exec-5] o.springdoc.api.AbstractOpenApiResource :367 [497533813891077][127.0.0.1] Init duration for springdoc-openapi is: 239 ms
+2023-12-26 23:30:21.533 INFO [http-nio-8093-exec-6] o.springdoc.api.AbstractOpenApiResource :367 [497533826592773][127.0.0.1] Init duration for springdoc-openapi is: 131 ms
+2023-12-26 23:30:24.923 INFO [http-nio-8093-exec-7] o.springdoc.api.AbstractOpenApiResource :367 [497533840527365][127.0.0.1] Init duration for springdoc-openapi is: 118 ms
+2023-12-26 23:30:28.145 INFO [http-nio-8093-exec-8] o.springdoc.api.AbstractOpenApiResource :367 [497533853884421][127.0.0.1] Init duration for springdoc-openapi is: 85 ms
+2023-12-26 23:44:29.060 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 23:44:29.063 INFO [main] io.chou401.user.UserApplication            :55 [][] Starting UserApplication using Java 1.8.0_371 on ChouChou-2.local with PID 77780 (/Users/chouchou/development/owner/spring-boot-plus-new/user/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 23:44:29.064 INFO [main] io.chou401.user.UserApplication            :638 [][] The following 1 profile is active: "dev"
+2023-12-26 23:44:30.026 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 23:44:30.028 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 23:44:30.048 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-12-26 23:44:30.899 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8093 (http)
+2023-12-26 23:44:30.903 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:44:30.904 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 23:44:30.905 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 23:44:31.025 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 23:44:31.026 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1863 ms
+2023-12-26 23:44:31.143 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 23:44:31.869 INFO [main] i.c.f.redis.CustomStringRedisSerializer :19 [][] redisKeyPrefix:boot
+2023-12-26 23:44:32.029 INFO [main] i.c.f.s.impl.LoginRedisAppServiceImpl   :39 [][] loginAppProperties = LoginAppProperties(enable=true, singleLogin=false, tokenExpireDays=30, loginPermission=false, includePaths=[/app/**])
+2023-12-26 23:44:32.030 INFO [main] i.c.f.s.impl.LoginRedisServiceImpl      :39 [][] loginAdminProperties = LoginAdminProperties(enable=true, singleLogin=false, tokenExpireMinutes=60, loginPermission=false, includePaths=[/admin/**], excludePaths=[/admin/login])
+2023-12-26 23:44:32.032ERROR [main] io.chou401.framework.utils.IpRegionUtil    :49 [][] 加载ip2region.xdb异常
+2023-12-26 23:44:32.036 INFO [main] io.chou401.framework.utils.api.WxMpApi     :27 [][] wxMpProperties:WxMpProperties(appid=, secret=)
+2023-12-26 23:44:32.045 INFO [main] i.c.framework.config.MybatisPlusConfig  :54 [][] merchantLineProperties:MerchantLineProperties(merchantIdColumn=merchant_id, includeTables=[demo_product])
+2023-12-26 23:44:33.166 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Starting ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:44:33.191 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :220 [][] Tomcat started on port(s): 8093 (http) with context path '/api'
+2023-12-26 23:44:33.208 INFO [main] io.chou401.user.UserApplication            :61 [][] Started UserApplication in 4.644 seconds (JVM running for 5.333)
+2023-12-26 23:44:33.717 INFO [main] io.chou401.framework.runner.YitIdRunner    :26 [][] YitId配置初始化完成，workerId：0
+2023-12-26 23:45:57.010 INFO [http-nio-8093-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 23:45:57.011 INFO [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet       :525 [][] Initializing Servlet 'dispatcherServlet'
+2023-12-26 23:45:57.015 INFO [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet       :547 [][] Completed initialization in 3 ms
+2023-12-26 23:45:57.691 INFO [http-nio-8093-exec-3] o.springdoc.api.AbstractOpenApiResource :367 [497537660342277][127.0.0.1] Init duration for springdoc-openapi is: 309 ms
+2023-12-26 23:46:48.270 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 23:46:48.273 INFO [main] io.chou401.user.UserApplication            :55 [][] Starting UserApplication using Java 1.8.0_371 on ChouChou-2.local with PID 78233 (/Users/chouchou/development/owner/spring-boot-plus-new/user/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 23:46:48.274 INFO [main] io.chou401.user.UserApplication            :638 [][] The following 1 profile is active: "dev"
+2023-12-26 23:46:49.245 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 23:46:49.248 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 23:46:49.268 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-12-26 23:46:50.094 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8093 (http)
+2023-12-26 23:46:50.098 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:46:50.099 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 23:46:50.099 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 23:46:50.223 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 23:46:50.225 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1865 ms
+2023-12-26 23:46:50.341 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 23:46:51.074 INFO [main] i.c.f.redis.CustomStringRedisSerializer :19 [][] redisKeyPrefix:boot
+2023-12-26 23:46:51.225 INFO [main] i.c.f.s.impl.LoginRedisAppServiceImpl   :39 [][] loginAppProperties = LoginAppProperties(enable=true, singleLogin=false, tokenExpireDays=30, loginPermission=false, includePaths=[/app/**])
+2023-12-26 23:46:51.226 INFO [main] i.c.f.s.impl.LoginRedisServiceImpl      :39 [][] loginAdminProperties = LoginAdminProperties(enable=true, singleLogin=false, tokenExpireMinutes=60, loginPermission=false, includePaths=[/admin/**], excludePaths=[/admin/login])
+2023-12-26 23:46:51.228ERROR [main] io.chou401.framework.utils.IpRegionUtil    :49 [][] 加载ip2region.xdb异常
+2023-12-26 23:46:51.232 INFO [main] io.chou401.framework.utils.api.WxMpApi     :27 [][] wxMpProperties:WxMpProperties(appid=, secret=)
+2023-12-26 23:46:51.241 INFO [main] i.c.framework.config.MybatisPlusConfig  :54 [][] merchantLineProperties:MerchantLineProperties(merchantIdColumn=merchant_id, includeTables=[demo_product])
+2023-12-26 23:46:52.379 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Starting ProtocolHandler ["http-nio-8093"]
+2023-12-26 23:46:52.407 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :220 [][] Tomcat started on port(s): 8093 (http) with context path '/api'
+2023-12-26 23:46:52.420 INFO [main] io.chou401.user.UserApplication            :61 [][] Started UserApplication in 4.633 seconds (JVM running for 5.298)
+2023-12-26 23:46:52.929 INFO [main] io.chou401.framework.runner.YitIdRunner    :26 [][] YitId配置初始化完成，workerId：0
+2023-12-26 23:46:56.152 INFO [http-nio-8093-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 23:46:56.153 INFO [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet       :525 [][] Initializing Servlet 'dispatcherServlet'
+2023-12-26 23:46:56.158 INFO [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet       :547 [][] Completed initialization in 4 ms
+2023-12-26 23:46:56.940 INFO [http-nio-8093-exec-3] o.springdoc.api.AbstractOpenApiResource :367 [497537902682117][127.0.0.1] Init duration for springdoc-openapi is: 408 ms
+2023-12-26 23:47:03.272 INFO [http-nio-8093-exec-4] o.springdoc.api.AbstractOpenApiResource :367 [497537928642565][127.0.0.1] Init duration for springdoc-openapi is: 378 ms
+2023-12-26 23:47:11.971 INFO [http-nio-8093-exec-5] o.springdoc.api.AbstractOpenApiResource :367 [497537965350917][127.0.0.1] Init duration for springdoc-openapi is: 128 ms
+2023-12-26 23:49:58.923 INFO [http-nio-8093-exec-8] o.springdoc.api.AbstractOpenApiResource :367 [497538648588293][127.0.0.1] Init duration for springdoc-openapi is: 71 ms
+2023-12-26 23:50:33.778 INFO [http-nio-8093-exec-9] o.springdoc.api.AbstractOpenApiResource :367 [497538792017925][127.0.0.1] Init duration for springdoc-openapi is: 109 ms
+2023-12-26 23:51:19.113 INFO [background-preinit] o.h.validator.internal.util.Version     :21 [][] HV000001: Hibernate Validator 6.2.5.Final
+2023-12-26 23:51:19.116 INFO [main] io.chou401.system.SystemApplication        :55 [][] Starting SystemApplication using Java 1.8.0_371 on ChouChou-2.local with PID 79085 (/Users/chouchou/development/owner/spring-boot-plus-new/system/build/classes/java/main started by chouchou in /Users/chouchou/development/owner/spring-boot-plus-new)
+2023-12-26 23:51:19.116 INFO [main] io.chou401.system.SystemApplication        :638 [][] The following 1 profile is active: "dev"
+2023-12-26 23:51:20.111 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:262 [][] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-12-26 23:51:20.113 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:132 [][] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-26 23:51:20.135 INFO [main] .s.d.r.c.RepositoryConfigurationDelegate:201 [][] Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-12-26 23:51:21.003 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :108 [][] Tomcat initialized with port(s): 8092 (http)
+2023-12-26 23:51:21.007 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Initializing ProtocolHandler ["http-nio-8092"]
+2023-12-26 23:51:21.008 INFO [main] o.apache.catalina.core.StandardService  :173 [][] Starting service [Tomcat]
+2023-12-26 23:51:21.008 INFO [main] org.apache.catalina.core.StandardEngine :173 [][] Starting Servlet engine: [Apache Tomcat/9.0.83]
+2023-12-26 23:51:21.148 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring embedded WebApplicationContext
+2023-12-26 23:51:21.149 INFO [main] w.s.c.ServletWebServerApplicationContext:292 [][] Root WebApplicationContext: initialization completed in 1933 ms
+2023-12-26 23:51:21.293 INFO [main] o.s.boot.web.servlet.RegistrationBean   :50 [][] Filter xssFilter was not registered (disabled)
+2023-12-26 23:51:23.262 INFO [main] i.c.f.redis.CustomStringRedisSerializer :19 [][] redisKeyPrefix:boot
+2023-12-26 23:51:23.300 INFO [main] i.c.f.s.impl.LoginRedisServiceImpl      :39 [][] loginAdminProperties = LoginAdminProperties(enable=true, singleLogin=false, tokenExpireMinutes=60, loginPermission=false, includePaths=[/admin/**], excludePaths=[/admin/login])
+2023-12-26 23:51:23.411 INFO [main] i.c.f.s.impl.LoginRedisAppServiceImpl   :39 [][] loginAppProperties = LoginAppProperties(enable=true, singleLogin=false, tokenExpireDays=30, loginPermission=false, includePaths=[/app/**])
+2023-12-26 23:51:23.435 INFO [main] io.chou401.framework.utils.IpRegionUtil    :47 [][] 加载ip2region.xdb成功
+2023-12-26 23:51:23.440 INFO [main] io.chou401.framework.utils.api.WxMpApi     :27 [][] wxMpProperties:WxMpProperties(appid=, secret=)
+2023-12-26 23:51:23.449 INFO [main] i.c.framework.config.MybatisPlusConfig  :54 [][] merchantLineProperties:MerchantLineProperties(merchantIdColumn=merchant_id, includeTables=[demo_product])
+2023-12-26 23:51:24.547 INFO [main] o.a.coyote.http11.Http11NioProtocol     :173 [][] Starting ProtocolHandler ["http-nio-8092"]
+2023-12-26 23:51:24.573 INFO [main] o.s.b.w.embedded.tomcat.TomcatWebServer :220 [][] Tomcat started on port(s): 8092 (http) with context path '/api'
+2023-12-26 23:51:24.587 INFO [main] io.chou401.system.SystemApplication        :61 [][] Started SystemApplication in 5.964 seconds (JVM running for 6.557)
+2023-12-26 23:51:25.097 INFO [main] io.chou401.framework.runner.YitIdRunner    :26 [][] YitId配置初始化完成，workerId：0
+2023-12-26 23:51:45.965 INFO [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]   :173 [][] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 23:51:45.966 INFO [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet       :525 [][] Initializing Servlet 'dispatcherServlet'
+2023-12-26 23:51:45.975 INFO [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet       :547 [][] Completed initialization in 8 ms
+2023-12-26 23:51:46.564 INFO [http-nio-8092-exec-2] o.springdoc.api.AbstractOpenApiResource :367 [497539088863237][127.0.0.1] Init duration for springdoc-openapi is: 431 ms
+2023-12-26 23:51:49.656 INFO [http-nio-8092-exec-3] o.springdoc.api.AbstractOpenApiResource :367 [497539099877381][127.0.0.1] Init duration for springdoc-openapi is: 819 ms

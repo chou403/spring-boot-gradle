@@ -1,0 +1,13 @@
+description '项目依赖服务'
+
+dependencies {
+    api project(':common')
+    api project(':framework')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'com.github.xiaoymin:knife4j-openapi3-spring-boot-starter'
+    implementation 'com.baomidou:mybatis-plus-boot-starter'
+    implementation 'org.aspectj:aspectjtools'
+    implementation 'com.mysql:mysql-connector-j'
+
+}

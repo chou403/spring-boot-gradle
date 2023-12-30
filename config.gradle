@@ -1,0 +1,51 @@
+// 依赖版本管理 统一版本管理
+ext {
+    version =
+            [
+                    "openfeignVersion"             : '4.1.0',
+                    "lombokVersion"                : '1.18.30',
+                    "mysqlConnectorJavaVersion"    : '8.0.33',
+                    "mybatisPlusBootStarterVersion": '3.5.4.1',
+                    "pageSpringBootStarterVersion" : '2.0.0',
+                    "velocityEngineCoreVersion"    : '2.3',
+                    "knife4jOpenapi3Version"       : '4.3.0',
+                    "fastjson2Version"             : '2.0.42',
+                    "ip2regionVersion"             : '2.7.0',
+                    "annotationsVersion"           : '24.1.0',
+                    "yitterIdGeneratorVersion"     : '1.0.6',
+                    "aliyunSdkOssVersion"          : '3.17.2',
+                    "oshiCoreVersion"              : '6.4.1',
+                    "guavaVersion"                 : '32.1.3-jre',
+                    "hutoolVersion"                : '5.8.22',
+                    "easyexcelVersion"             : '3.3.2',
+                    "junitJupiterVersion"          : '5.8.1',
+                    "snakeyamlVersion"             : '2.2',
+
+            ]
+
+    dependencies =
+            [
+                    "openfeign"             : "org.springframework.cloud:spring-cloud-starter-openfeign:$version.openfeignVersion",
+                    "lombok"                : "org.projectlombok:lombok:$version.lombokVersion",
+                    "mysqlConnectorJava"    : "com.mysql:mysql-connector-j:$version.mysqlConnectorJavaVersion",
+                    "mybatisPlusBootStarter": "com.baomidou:mybatis-plus-boot-starter:$version.mybatisPlusBootStarterVersion",
+                    "pageSpringBootStarter" : "com.github.pagehelper:pagehelper-spring-boot-starter:$version.pageSpringBootStarterVersion",
+                    "velocityEngineCore"    : "org.apache.velocity:velocity-engine-core:$version.velocityEngineCoreVersion",
+                    "knife4jOpenapi3"       : "com.github.xiaoymin:knife4j-openapi3-spring-boot-starter:$version.knife4jOpenapi3Version",
+                    "fastjson2"             : "com.alibaba.fastjson2:fastjson2:$version.fastjson2Version",
+                    "ip2region"             : "org.lionsoul:ip2region:$version.ip2regionVersion",
+                    "annotations"           : "org.jetbrains:annotations:$version.annotationsVersion",
+                    "yitterIdGenerator"     : "com.github.yitter:yitter-idgenerator:$version.yitterIdGeneratorVersion",
+                    "aliyunSdkOss"          : "com.aliyun.oss:aliyun-sdk-oss:$version.aliyunSdkOssVersion",
+                    "oshiCore"              : "com.github.oshi:oshi-core:$version.oshiCoreVersion",
+                    "guava"                 : "com.google.guava:guava:$version.guavaVersion",
+                    "hutoolAll"             : "cn.hutool:hutool-all:$version.hutoolVersion",
+                    "easyexcel"             : "com.alibaba:easyexcel:$version.easyexcelVersion",
+                    "junitJupiterApi"       : "org.junit.jupiter:junit-jupiter-api:$version.junitJupiterVersion",
+                    "junitJupiterEngine"    : "org.junit.jupiter:junit-jupiter-engine:$version.junitJupiterVersion",
+                    "snakeyaml"             : "org.yaml:snakeyaml:$version.snakeyamlVersion",
+
+
+            ]
+
+}

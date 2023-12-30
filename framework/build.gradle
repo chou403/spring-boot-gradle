@@ -1,0 +1,48 @@
+description '项目依赖服务'
+
+dependencies {
+    api project(':common')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'com.alibaba.fastjson2:fastjson2'
+    implementation 'com.github.xiaoymin:knife4j-openapi3-spring-boot-starter'
+
+
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'commons-codec:commons-codec'
+
+//    implementation 'org.aspectj:aspectjtools'
+//    implementation 'com.google.guava:guava'
+//    implementation 'com.auth0:java-jwt'
+//    implementation 'org.mybatis:mybatis'
+//    implementation 'org.mybatis:mybatis-spring'
+    implementation 'com.baomidou:mybatis-plus-boot-starter'
+    implementation 'cn.hutool:hutool-all'
+    implementation 'com.alibaba:easyexcel'
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter'
+    implementation 'com.github.yitter:yitter-idgenerator'
+    implementation 'org.lionsoul:ip2region'
+    implementation 'com.aliyun.oss:aliyun-sdk-oss'
+    implementation 'com.github.oshi:oshi-core'
+    implementation 'org.aspectj:aspectjtools'
+
+
+//    implementation 'org.apache.httpcomponents:httpclient'
+//    implementation 'jakarta.validation:jakarta.validation-api'
+//    implementation 'jakarta.servlet:jakarta.servlet-api'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+//    implementation 'org.springframework.boot:spring-boot-starter-aop'
+//    implementation 'com.fasterxml.jackson.core:jackson-databind'
+//    implementation 'org.redisson:redisson-spring-data-31'
+//    implementation 'org.springframework.kafka:spring-kafka'
+//    implementation 'io.swagger.core.v3:swagger-models-jakarta'
+
+}
+
+jar {
+    enabled = true
+}
+
+bootJar {
+    enabled = false
+}

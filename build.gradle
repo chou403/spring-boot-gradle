@@ -1,0 +1,63 @@
+apply from: 'config.gradle'
+
+// 构建 gradle 脚本自身需要的资源
+buildscript {
+    ext.springBootVersion = '2.7.18'
+
+    // 仓库
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+    }
+
+    dependencies {
+        // spring-boot-gradle 插件，方便版本管理
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
+}
+
+// 全局配置
+allprojects {
+    group = 'io.chou401'
+    version = '0.0.1-SNAPSHOT'
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+    }
+
+}
+
+// 配置所有子项目
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    dependencies {
+        annotationProcessor 'org.projectlombok:lombok'
+        implementation 'org.projectlombok:lombok'
+        testImplementation rootProject.ext.dependencies.junitJupiterApi
+        testRuntimeOnly rootProject.ext.dependencies.junitJupiterEngine
+        implementation rootProject.ext.dependencies.snakeyaml
+//        implementation rootProject.ext.dependencies.jacksonDatabind
+    }
+
+    dependencyManagement {
+        dependencies {
+            for (depJar in rootProject.ext.dependencies) {
+                dependency depJar.value
+            }
+        }
+    }
+}
