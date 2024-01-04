@@ -16,7 +16,6 @@ import io.chou401.system.dto.SysMenuDto;
 import io.chou401.system.service.SysMenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,8 +33,11 @@ import java.util.stream.Collectors;
 @Service
 public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> implements SysMenuService {
 
-    @Autowired
-    private SysMenuMapper sysMenuMapper;
+    private final SysMenuMapper sysMenuMapper;
+
+    public SysMenuServiceImpl(SysMenuMapper sysMenuMapper) {
+        this.sysMenuMapper = sysMenuMapper;
+    }
 
     @Transactional(rollbackFor = Exception.class)
     @Override

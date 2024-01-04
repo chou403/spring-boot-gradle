@@ -11,7 +11,6 @@ import io.chou401.system.dto.SysDictTypeDto;
 import io.chou401.system.service.SysDictTypeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,8 +27,11 @@ import java.util.List;
 @Service
 public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDictType> implements SysDictTypeService {
 
-    @Autowired
-    private SysDictTypeMapper sysDictTypeMapper;
+    private final SysDictTypeMapper sysDictTypeMapper;
+
+    public SysDictTypeServiceImpl(SysDictTypeMapper sysDictTypeMapper) {
+        this.sysDictTypeMapper = sysDictTypeMapper;
+    }
 
     @Transactional(rollbackFor = Exception.class)
     @Override

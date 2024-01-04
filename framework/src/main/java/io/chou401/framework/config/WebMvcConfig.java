@@ -8,7 +8,6 @@ import io.chou401.framework.interceptor.login.*;
 import io.chou401.framework.xss.XssFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,26 +27,29 @@ import java.util.List;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    @Autowired
-    private LoginProperties loginProperties;
+    private final LoginProperties loginProperties;
 
-    @Autowired
-    private LoginAdminProperties loginAdminProperties;
+    private final LoginAdminProperties loginAdminProperties;
 
-    @Autowired
-    private LoginAppProperties loginAppProperties;
+    private final LoginAppProperties loginAppProperties;
 
-    @Autowired
-    private LoginCommonProperties loginCommonProperties;
+    private final LoginCommonProperties loginCommonProperties;
 
-    @Autowired
-    private LocalFileProperties localFileProperties;
+    private final LocalFileProperties localFileProperties;
 
-    @Autowired
-    private XssProperties xssProperties;
+    private final XssProperties xssProperties;
 
-    @Autowired
-    private NotAuthProperties notAuthProperties;
+    private final NotAuthProperties notAuthProperties;
+
+    public WebMvcConfig(LoginProperties loginProperties, LoginAdminProperties loginAdminProperties, LoginAppProperties loginAppProperties, LoginCommonProperties loginCommonProperties, LocalFileProperties localFileProperties, XssProperties xssProperties, NotAuthProperties notAuthProperties) {
+        this.loginProperties = loginProperties;
+        this.loginAdminProperties = loginAdminProperties;
+        this.loginAppProperties = loginAppProperties;
+        this.loginCommonProperties = loginCommonProperties;
+        this.localFileProperties = localFileProperties;
+        this.xssProperties = xssProperties;
+        this.notAuthProperties = notAuthProperties;
+    }
 
     @Bean
     public ExcludePathInterceptor excludePathInterceptor() {

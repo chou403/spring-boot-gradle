@@ -11,12 +11,9 @@ import io.chou401.system.dto.SysDictDto;
 import io.chou401.system.service.SysDictService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import jakarta.validation.Valid;
-import java.io.Serializable;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 字典数据 控制器
@@ -30,8 +27,11 @@ import java.io.Serializable;
 @RequestMapping("/admin/sysDict")
 public class SysDictController {
 
-    @Autowired
-    private SysDictService sysDictService;
+    private final SysDictService sysDictService;
+
+    public SysDictController(SysDictService sysDictService) {
+        this.sysDictService = sysDictService;
+    }
 
     /**
      * 添加字典数据

@@ -10,7 +10,6 @@ import io.swagger.v3.oas.models.media.StringSchema;
 import io.swagger.v3.oas.models.parameters.HeaderParameter;
 import io.swagger.v3.oas.models.parameters.Parameter;
 import org.springdoc.core.GroupedOpenApi;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,13 +22,16 @@ public class OpenApiConfig {
 
     private static final String TOKEN = "token";
 
-    @Autowired
-    private OpenApiProperties openApiProperties;
+    private final OpenApiProperties openApiProperties;
 
     /**
      * token请求头参数
      */
     private Parameter tokenParameter = new HeaderParameter().name(TOKEN).schema(new StringSchema()._default("").name(TOKEN));
+
+    public OpenApiConfig(OpenApiProperties openApiProperties) {
+        this.openApiProperties = openApiProperties;
+    }
 
 
     @Bean

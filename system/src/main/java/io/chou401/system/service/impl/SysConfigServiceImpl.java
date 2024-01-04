@@ -4,17 +4,16 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.chou401.common.entity.sys.SysConfig;
 import io.chou401.common.mapper.sys.SysConfigMapper;
+import io.chou401.common.page.OrderByItem;
+import io.chou401.common.page.Paging;
 import io.chou401.common.query.sys.SysConfigQuery;
 import io.chou401.common.vo.sys.SysConfigVo;
 import io.chou401.framework.exception.BusinessException;
-import io.chou401.common.page.OrderByItem;
-import io.chou401.common.page.Paging;
 import io.chou401.framework.utils.PagingUtil;
 import io.chou401.system.dto.SysConfigDto;
 import io.chou401.system.service.SysConfigService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,8 +30,11 @@ import java.util.List;
 @Service
 public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig> implements SysConfigService {
 
-    @Autowired
-    private SysConfigMapper sysConfigMapper;
+    private final SysConfigMapper sysConfigMapper;
+
+    public SysConfigServiceImpl(SysConfigMapper sysConfigMapper) {
+        this.sysConfigMapper = sysConfigMapper;
+    }
 
     @Transactional(rollbackFor = Exception.class)
     @Override

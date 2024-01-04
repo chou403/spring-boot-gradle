@@ -12,11 +12,10 @@ import io.chou401.system.service.SysMenuService;
 import io.chou401.system.service.SysRoleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.Valid;
 import java.util.List;
 
 /**
@@ -31,11 +30,14 @@ import java.util.List;
 @RequestMapping("/admin/sysRole")
 public class SysRoleController {
 
-    @Autowired
-    private SysRoleService sysRoleService;
+    private final SysRoleService sysRoleService;
 
-    @Autowired
-    private SysMenuService sysMenuService;
+    private final SysMenuService sysMenuService;
+
+    public SysRoleController(SysRoleService sysRoleService, SysMenuService sysMenuService) {
+        this.sysRoleService = sysRoleService;
+        this.sysMenuService = sysMenuService;
+    }
 
     /**
      * 添加系统角色

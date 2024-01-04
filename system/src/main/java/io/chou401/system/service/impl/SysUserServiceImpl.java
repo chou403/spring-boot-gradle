@@ -5,11 +5,11 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.chou401.common.entity.sys.SysUser;
 import io.chou401.common.mapper.sys.SysUserMapper;
+import io.chou401.common.page.OrderByItem;
+import io.chou401.common.page.Paging;
 import io.chou401.common.query.sys.SysUserQuery;
 import io.chou401.common.vo.sys.SysUserVo;
 import io.chou401.framework.exception.BusinessException;
-import io.chou401.common.page.OrderByItem;
-import io.chou401.common.page.Paging;
 import io.chou401.framework.utils.PagingUtil;
 import io.chou401.framework.utils.PasswordUtil;
 import io.chou401.framework.utils.TokenUtil;
@@ -23,7 +23,6 @@ import io.chou401.system.service.SysUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,11 +39,14 @@ import java.util.List;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
-    @Autowired
-    private SysUserMapper sysUserMapper;
+    private final SysUserMapper sysUserMapper;
 
-    @Autowired
-    private io.chou401.framework.service.LoginRedisService LoginRedisService;
+    private final io.chou401.framework.service.LoginRedisService LoginRedisService;
+
+    public SysUserServiceImpl(SysUserMapper sysUserMapper, io.chou401.framework.service.LoginRedisService loginRedisService) {
+        this.sysUserMapper = sysUserMapper;
+        LoginRedisService = loginRedisService;
+    }
 
     @Transactional(rollbackFor = Exception.class)
     @Override

@@ -10,11 +10,10 @@ import io.chou401.system.dto.SysMenuDto;
 import io.chou401.system.service.SysMenuService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.Valid;
 import java.util.List;
 
 /**
@@ -29,8 +28,11 @@ import java.util.List;
 @RequestMapping("/admin/sysMenu")
 public class SysMenuController {
 
-    @Autowired
-    private SysMenuService sysMenuService;
+    private final SysMenuService sysMenuService;
+
+    public SysMenuController(SysMenuService sysMenuService) {
+        this.sysMenuService = sysMenuService;
+    }
 
     /**
      * 添加系统菜单

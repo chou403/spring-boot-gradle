@@ -10,7 +10,6 @@ import io.chou401.common.vo.sys.SysLogVo;
 import io.chou401.framework.utils.PagingUtil;
 import io.chou401.system.service.SysLogService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +24,11 @@ import java.util.List;
 @Service
 public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements SysLogService {
 
-    @Autowired
-    private SysLogMapper sysLogMapper;
+    private final SysLogMapper sysLogMapper;
+
+    public SysLogServiceImpl(SysLogMapper sysLogMapper) {
+        this.sysLogMapper = sysLogMapper;
+    }
 
     @Override
     public SysLogVo getSysLogById(Long id) throws Exception {

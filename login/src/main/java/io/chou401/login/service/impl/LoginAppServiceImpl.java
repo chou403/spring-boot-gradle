@@ -22,7 +22,6 @@ import io.chou401.login.service.LoginAppService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -35,14 +34,17 @@ import java.util.Date;
 @Service
 public class LoginAppServiceImpl implements LoginAppService {
 
-    @Autowired
-    private UserApi userApi;
+    private final UserApi userApi;
 
-    @Autowired
-    private SystemApi systemApi;
+    private final SystemApi systemApi;
 
-    @Autowired
-    private LoginRedisAppService loginRedisAppService;
+    private final LoginRedisAppService loginRedisAppService;
+
+    public LoginAppServiceImpl(UserApi userApi, SystemApi systemApi, LoginRedisAppService loginRedisAppService) {
+        this.userApi = userApi;
+        this.systemApi = systemApi;
+        this.loginRedisAppService = loginRedisAppService;
+    }
 
     @Override
     public LoginTokenVo login(LoginAppDto dto) throws Exception {

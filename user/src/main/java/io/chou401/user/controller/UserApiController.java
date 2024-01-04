@@ -10,12 +10,12 @@ import io.chou401.user.dto.UserDto;
 import io.chou401.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * {@code @author}  chou401
@@ -28,8 +28,11 @@ import jakarta.validation.Valid;
 @RequestMapping("/admin/user/feign")
 public class UserApiController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public UserApiController(UserService userService) {
+        this.userService = userService;
+    }
 
     /**
      * 根据微信openid获取用户

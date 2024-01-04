@@ -11,11 +11,9 @@ import io.chou401.system.dto.SysFileDto;
 import io.chou401.system.service.SysFileService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 系统文件 控制器
@@ -29,8 +27,11 @@ import jakarta.validation.Valid;
 @RequestMapping("/admin/sysFile")
 public class SysFileController {
 
-    @Autowired
-    private SysFileService sysFileService;
+    private final SysFileService sysFileService;
+
+    public SysFileController(SysFileService sysFileService) {
+        this.sysFileService = sysFileService;
+    }
 
     /**
      * 修改系统文件

@@ -8,11 +8,9 @@ import io.chou401.framework.response.ApiResult;
 import io.chou401.system.service.SysLogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 系统日志 控制器
@@ -26,8 +24,11 @@ import jakarta.validation.Valid;
 @RequestMapping("/admin/sysLog")
 public class SysLogController {
 
-    @Autowired
-    private SysLogService sysLogService;
+    private final SysLogService sysLogService;
+
+    public SysLogController(SysLogService sysLogService) {
+        this.sysLogService = sysLogService;
+    }
 
     /**
      * 获取系统日志详情

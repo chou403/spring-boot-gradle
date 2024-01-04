@@ -7,11 +7,9 @@ import io.chou401.framework.response.ApiResult;
 import io.chou401.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * App用户信息 控制器
@@ -25,8 +23,11 @@ import jakarta.validation.Valid;
 @RequestMapping("/app/user")
 public class UserAppController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public UserAppController(UserService userService) {
+        this.userService = userService;
+    }
 
     /**
      * 获取App用户信息详情

@@ -8,11 +8,11 @@ import io.chou401.common.entity.sys.SysRole;
 import io.chou401.common.entity.sys.SysRoleMenu;
 import io.chou401.common.mapper.sys.SysRoleMapper;
 import io.chou401.common.mapper.sys.SysUserMapper;
+import io.chou401.common.page.OrderByItem;
+import io.chou401.common.page.Paging;
 import io.chou401.common.query.sys.SysRoleQuery;
 import io.chou401.common.vo.sys.SysRoleVo;
 import io.chou401.framework.exception.BusinessException;
-import io.chou401.common.page.OrderByItem;
-import io.chou401.common.page.Paging;
 import io.chou401.framework.utils.PagingUtil;
 import io.chou401.system.dto.RoleMenusDto;
 import io.chou401.system.dto.SysRoleDto;
@@ -21,7 +21,6 @@ import io.chou401.system.service.SysRoleMenuService;
 import io.chou401.system.service.SysRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,17 +37,20 @@ import java.util.stream.Collectors;
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {
 
-    @Autowired
-    private SysRoleMapper sysRoleMapper;
+    private final SysRoleMapper sysRoleMapper;
 
-    @Autowired
-    private SysRoleMenuService sysRoleMenuService;
+    private final SysRoleMenuService sysRoleMenuService;
 
-    @Autowired
-    private SysMenuService sysMenuService;
+    private final SysMenuService sysMenuService;
 
-    @Autowired
-    private SysUserMapper sysUserMapper;
+    private final SysUserMapper sysUserMapper;
+
+    public SysRoleServiceImpl(SysRoleMapper sysRoleMapper, SysRoleMenuService sysRoleMenuService, SysMenuService sysMenuService, SysUserMapper sysUserMapper) {
+        this.sysRoleMapper = sysRoleMapper;
+        this.sysRoleMenuService = sysRoleMenuService;
+        this.sysMenuService = sysMenuService;
+        this.sysUserMapper = sysUserMapper;
+    }
 
     @Transactional(rollbackFor = Exception.class)
     @Override

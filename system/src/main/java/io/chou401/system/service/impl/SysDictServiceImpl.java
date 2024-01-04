@@ -5,19 +5,18 @@ import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.chou401.common.entity.sys.SysDict;
 import io.chou401.common.mapper.sys.SysDictMapper;
+import io.chou401.common.page.OrderByItem;
+import io.chou401.common.page.Paging;
 import io.chou401.common.query.sys.SysDictAppQuery;
 import io.chou401.common.query.sys.SysDictQuery;
 import io.chou401.common.vo.sys.SysDictAppVo;
 import io.chou401.common.vo.sys.SysDictVo;
 import io.chou401.framework.exception.BusinessException;
-import io.chou401.common.page.OrderByItem;
-import io.chou401.common.page.Paging;
 import io.chou401.framework.utils.PagingUtil;
 import io.chou401.system.dto.SysDictDto;
 import io.chou401.system.service.SysDictService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,8 +36,11 @@ import java.util.stream.Collectors;
 @Service
 public class SysDictServiceImpl extends ServiceImpl<SysDictMapper, SysDict> implements SysDictService {
 
-    @Autowired
-    private SysDictMapper sysDictMapper;
+    private final SysDictMapper sysDictMapper;
+
+    public SysDictServiceImpl(SysDictMapper sysDictMapper) {
+        this.sysDictMapper = sysDictMapper;
+    }
 
     @Transactional(rollbackFor = Exception.class)
     @Override

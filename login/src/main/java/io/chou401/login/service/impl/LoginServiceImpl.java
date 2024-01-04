@@ -18,7 +18,6 @@ import io.chou401.login.dto.LoginDto;
 import io.chou401.login.service.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -32,18 +31,20 @@ import java.util.List;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    @Autowired
-    private SysUserMapper sysUserMapper;
+    private final SysUserMapper sysUserMapper;
 
-    @Autowired
-    private SysRoleMapper sysRoleMapper;
+    private final SysRoleMapper sysRoleMapper;
 
-    @Autowired
-    private SysMenuMapper sysMenuMapper;
+    private final SysMenuMapper sysMenuMapper;
 
-    @Autowired
-    private LoginRedisService loginRedisService;
+    private final LoginRedisService loginRedisService;
 
+    public LoginServiceImpl(SysUserMapper sysUserMapper, SysRoleMapper sysRoleMapper, SysMenuMapper sysMenuMapper, LoginRedisService loginRedisService) {
+        this.sysUserMapper = sysUserMapper;
+        this.sysRoleMapper = sysRoleMapper;
+        this.sysMenuMapper = sysMenuMapper;
+        this.loginRedisService = loginRedisService;
+    }
 
     @Override
     public LoginTokenVo login(LoginDto dto) throws Exception {

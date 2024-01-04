@@ -7,13 +7,12 @@ import io.chou401.framework.exception.LoginException;
 import io.chou401.framework.exception.LoginTokenException;
 import io.chou401.framework.service.LoginRedisService;
 import io.chou401.framework.utils.TokenUtil;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import jakarta.annotation.PostConstruct;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,13 +25,16 @@ public class LoginRedisServiceImpl implements LoginRedisService {
 
     private static final TimeUnit TOKEN_TIME_UNIT = TimeUnit.MINUTES;
 
-    @Autowired
-    private LoginAdminProperties loginAdminProperties;
+    private final LoginAdminProperties loginAdminProperties;
 
-    @Autowired
-    private RedisTemplate redisTemplate;
+    private final RedisTemplate redisTemplate;
 
     private Integer tokenExpireMinutes;
+
+    public LoginRedisServiceImpl(LoginAdminProperties loginAdminProperties, RedisTemplate redisTemplate) {
+        this.loginAdminProperties = loginAdminProperties;
+        this.redisTemplate = redisTemplate;
+    }
 
     @PostConstruct
     public void init() {

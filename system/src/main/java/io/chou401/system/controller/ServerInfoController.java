@@ -9,7 +9,6 @@ import io.chou401.framework.utils.ServerInfoUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +24,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/admin/serverInfo")
 public class ServerInfoController {
 
-    @Autowired
-    private Environment environment;
+    private final Environment environment;
+
+    public ServerInfoController(Environment environment) {
+        this.environment = environment;
+    }
 
     /**
      * 获取服务信息详情

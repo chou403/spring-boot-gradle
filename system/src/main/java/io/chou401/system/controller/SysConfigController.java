@@ -11,11 +11,9 @@ import io.chou401.system.dto.SysConfigDto;
 import io.chou401.system.service.SysConfigService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 系统配置 控制器
@@ -29,8 +27,11 @@ import jakarta.validation.Valid;
 @RequestMapping("/admin/sysConfig")
 public class SysConfigController {
 
-    @Autowired
-    private SysConfigService sysConfigService;
+    private final SysConfigService sysConfigService;
+
+    public SysConfigController(SysConfigService sysConfigService) {
+        this.sysConfigService = sysConfigService;
+    }
 
     /**
      * 添加系统配置

@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
 import org.apache.commons.collections4.CollectionUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,8 +27,11 @@ import java.util.List;
 @Configuration
 public class MybatisPlusConfig {
 
-    @Autowired
-    private MerchantLineProperties merchantLineProperties;
+    private final MerchantLineProperties merchantLineProperties;
+
+    public MybatisPlusConfig(MerchantLineProperties merchantLineProperties) {
+        this.merchantLineProperties = merchantLineProperties;
+    }
 
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {

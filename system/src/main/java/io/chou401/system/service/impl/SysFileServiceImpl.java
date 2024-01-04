@@ -3,17 +3,16 @@ package io.chou401.system.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.chou401.common.entity.sys.SysFile;
 import io.chou401.common.mapper.sys.SysFileMapper;
+import io.chou401.common.page.OrderByItem;
+import io.chou401.common.page.Paging;
 import io.chou401.common.query.sys.SysFileQuery;
 import io.chou401.common.vo.sys.SysFileVo;
 import io.chou401.framework.exception.BusinessException;
-import io.chou401.common.page.OrderByItem;
-import io.chou401.common.page.Paging;
 import io.chou401.framework.utils.PagingUtil;
 import io.chou401.system.dto.SysFileDto;
 import io.chou401.system.service.SysFileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,8 +29,11 @@ import java.util.List;
 @Service
 public class SysFileServiceImpl extends ServiceImpl<SysFileMapper, SysFile> implements SysFileService {
 
-    @Autowired
-    private SysFileMapper sysFileMapper;
+    private final SysFileMapper sysFileMapper;
+
+    public SysFileServiceImpl(SysFileMapper sysFileMapper) {
+        this.sysFileMapper = sysFileMapper;
+    }
 
     @Transactional(rollbackFor = Exception.class)
     @Override

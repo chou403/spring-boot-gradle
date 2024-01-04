@@ -6,7 +6,6 @@ import io.chou401.common.entity.sys.SysRoleMenu;
 import io.chou401.common.mapper.sys.SysRoleMenuMapper;
 import io.chou401.system.service.SysRoleMenuService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,8 +18,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysRoleMenuServiceImpl extends ServiceImpl<SysRoleMenuMapper, SysRoleMenu> implements SysRoleMenuService {
 
-    @Autowired
-    private SysRoleMenuMapper sysRoleMenuMapper;
+    private final SysRoleMenuMapper sysRoleMenuMapper;
+
+    public SysRoleMenuServiceImpl(SysRoleMenuMapper sysRoleMenuMapper) {
+        this.sysRoleMenuMapper = sysRoleMenuMapper;
+    }
 
     @Override
     public void deleteSysRoleMenuByRoleId(Long roleId) {

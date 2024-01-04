@@ -10,11 +10,10 @@ import io.chou401.system.dto.SysDictTypeDto;
 import io.chou401.system.service.SysDictTypeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.Valid;
 import java.util.List;
 
 /**
@@ -29,8 +28,11 @@ import java.util.List;
 @RequestMapping("/admin/sysDictType")
 public class SysDictTypeController {
 
-    @Autowired
-    private SysDictTypeService sysDictTypeService;
+    private final SysDictTypeService sysDictTypeService;
+
+    public SysDictTypeController(SysDictTypeService sysDictTypeService) {
+        this.sysDictTypeService = sysDictTypeService;
+    }
 
     /**
      * 添加字典类型
