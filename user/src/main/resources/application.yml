@@ -1,7 +1,7 @@
 server:
   port: 8093
   servlet:
-    context-path: /api
+    context-path: /
   tomcat:
     uri-encoding: UTF-8
     threads:
@@ -13,7 +13,7 @@ server:
 # spring配置
 spring:
   application:
-    name: spring-boot-plus
+    name: user-service
   # 当前项目maven激活环境，例如：dev/test/prod
   profiles:
     active: dev
@@ -38,23 +38,23 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 60000
   # redis配置
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    password:
-    # 连接超时时间（毫秒）
-    timeout: 10s
-    lettuce:
-      pool:
-        # 连接池最大连接数
-        max-active: 200
-        # 连接池中的最大空闲连接
-        max-idle: 20
-        # 连接池最大阻塞等待时间
-        max-wait: 10s
-        # 连接池中的最小空闲连接
-        min-idle: 10
-      shutdown-timeout: 3s
+  data:
+    redis:
+      port: 6379
+      password: 123456
+      # 连接超时时间（毫秒）
+      timeout: 10s
+      lettuce:
+        pool:
+          # 连接池最大连接数
+          max-active: 200
+          # 连接池中的最大空闲连接
+          max-idle: 20
+          # 连接池最大阻塞等待时间
+          max-wait: 10s
+          # 连接池中的最小空闲连接
+          min-idle: 10
+        shutdown-timeout: 3s
 
 # mybatis-plus配置
 mybatis-plus:
@@ -218,7 +218,7 @@ knife4j:
     footer-custom-content: MIT License | Copyright © 2019-2023 [chou401](https://chou401.io)
 openapi:
   title: Boot API Docs
-  description: spring-boot-plus后台接口文档
+  description: App用户模块接口文档
   terms-of-service: https://github.com/chou401
   contact-name: chou401
   contact-url: https://chou401.io

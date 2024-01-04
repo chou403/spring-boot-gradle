@@ -3,19 +3,20 @@ package io.chou401.framework.interceptor.login;
 import io.chou401.common.constant.CommonConstant;
 import io.chou401.framework.config.properties.BootProperties;
 import io.chou401.framework.interceptor.BaseMethodInterceptor;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.method.HandlerMethod;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.util.List;
 
 /**
  * 排除路径拦截器
- *
+ * <p>
  * {@code @author}  chou401
  * {@code @date} 2023/12/03
  **/

@@ -65,9 +65,6 @@ public class OpenApiConfig {
     /**
      * 配置接口
      *
-     * @param group
-     * @param packagedToMatch
-     * @return
      */
     private GroupedOpenApi api(String group, String[] packagedToMatch) {
         return GroupedOpenApi.builder()

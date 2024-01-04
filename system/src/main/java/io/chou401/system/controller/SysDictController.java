@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.io.Serializable;
 
 /**
@@ -117,9 +117,9 @@ public class SysDictController {
      * @return
      * @throws Exception
      */
-    @PostMapping("/getSysDictPage")
+    @PostMapping("/getSysDictLabelByValue")
     @Operation(summary = "字典编码和label获取字典值")
-    public ApiResult<String> getSysDictLabelByValue(@RequestBody String dictCode, Serializable value) throws Exception {
+    public ApiResult<String> getSysDictLabelByValue(@RequestParam String dictCode, @RequestParam Integer value) throws Exception {
         String res = sysDictService.getSysDictLabelByValue(dictCode, value);
         return ApiResult.success(res);
     }

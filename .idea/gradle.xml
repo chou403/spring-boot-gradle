@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/framework" />
+            <option value="$PROJECT_DIR$/gateway" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/system" />
             <option value="$PROJECT_DIR$/user" />

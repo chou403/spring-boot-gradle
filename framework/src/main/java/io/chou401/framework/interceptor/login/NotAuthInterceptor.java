@@ -5,8 +5,8 @@ import io.chou401.framework.interceptor.BaseExcludeMethodInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.method.HandlerMethod;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * 没权限拦截器，项目演示用，生成项目根据情况而定

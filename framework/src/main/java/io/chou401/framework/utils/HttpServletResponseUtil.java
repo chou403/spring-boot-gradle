@@ -3,7 +3,7 @@ package io.chou401.framework.utils;
 import com.alibaba.fastjson2.JSON;
 import io.chou401.framework.response.ApiResult;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 

@@ -2,13 +2,15 @@
 ext {
     version =
             [
-                    "openfeignVersion"             : '4.1.0',
+                    "openfeignVersion"             : '4.0.4',
                     "lombokVersion"                : '1.18.30',
                     "mysqlConnectorJavaVersion"    : '8.0.33',
                     "mybatisPlusBootStarterVersion": '3.5.4.1',
                     "pageSpringBootStarterVersion" : '2.0.0',
                     "velocityEngineCoreVersion"    : '2.3',
-                    "knife4jOpenapi3Version"       : '4.3.0',
+                    "knife4jOpenapi3Version"       : '4.4.0',
+                    "swaggerModelsJakartaVersion"  : '2.2.19',
+                    "springdocOpenapiCoreVersion"  : '1.7.0',
                     "fastjson2Version"             : '2.0.42',
                     "ip2regionVersion"             : '2.7.0',
                     "annotationsVersion"           : '24.1.0',
@@ -20,6 +22,9 @@ ext {
                     "easyexcelVersion"             : '3.3.2',
                     "junitJupiterVersion"          : '5.8.1',
                     "snakeyamlVersion"             : '2.2',
+                    "jakartaServletApiVersion"     : '6.0.0',
+                    "springCloudGatewayVersion"    : '4.0.8',
+                    "nettyAllVersion"              : '4.1.101.Final',
 
             ]
 
@@ -31,7 +36,9 @@ ext {
                     "mybatisPlusBootStarter": "com.baomidou:mybatis-plus-boot-starter:$version.mybatisPlusBootStarterVersion",
                     "pageSpringBootStarter" : "com.github.pagehelper:pagehelper-spring-boot-starter:$version.pageSpringBootStarterVersion",
                     "velocityEngineCore"    : "org.apache.velocity:velocity-engine-core:$version.velocityEngineCoreVersion",
-                    "knife4jOpenapi3"       : "com.github.xiaoymin:knife4j-openapi3-spring-boot-starter:$version.knife4jOpenapi3Version",
+                    "knife4jOpenapi3"       : "com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter:$version.knife4jOpenapi3Version",
+                    "swaggerModelsJakarta"  : "io.swagger.core.v3:swagger-models-jakarta:$version.swaggerModelsJakartaVersion",
+                    "springdocOpenapiCore"  : "org.springdoc:springdoc-openapi-webmvc-core:$version.springdocOpenapiCoreVersion",
                     "fastjson2"             : "com.alibaba.fastjson2:fastjson2:$version.fastjson2Version",
                     "ip2region"             : "org.lionsoul:ip2region:$version.ip2regionVersion",
                     "annotations"           : "org.jetbrains:annotations:$version.annotationsVersion",
@@ -44,6 +51,9 @@ ext {
                     "junitJupiterApi"       : "org.junit.jupiter:junit-jupiter-api:$version.junitJupiterVersion",
                     "junitJupiterEngine"    : "org.junit.jupiter:junit-jupiter-engine:$version.junitJupiterVersion",
                     "snakeyaml"             : "org.yaml:snakeyaml:$version.snakeyamlVersion",
+                    "jakartaServletApi"     : "jakarta.servlet:jakarta.servlet-api:$version.jakartaServletApiVersion",
+                    "springCloudGateway"    : "org.springframework.cloud:spring-cloud-starter-gateway:$version.springCloudGatewayVersion",
+                    "nettyAll"              : "io.netty:netty-all:$version.nettyAllVersion",
 
 
             ]

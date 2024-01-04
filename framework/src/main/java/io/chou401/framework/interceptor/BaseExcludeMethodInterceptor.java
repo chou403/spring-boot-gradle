@@ -3,8 +3,8 @@ package io.chou401.framework.interceptor;
 import io.chou401.common.constant.CommonConstant;
 import org.springframework.web.method.HandlerMethod;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * {@code @author}  chou401

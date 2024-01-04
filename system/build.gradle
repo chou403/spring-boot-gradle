@@ -5,7 +5,7 @@ dependencies {
     api project(':framework')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'com.github.xiaoymin:knife4j-openapi3-spring-boot-starter'
+    implementation 'com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter'
     implementation 'com.baomidou:mybatis-plus-boot-starter'
     implementation 'org.aspectj:aspectjtools'
     implementation 'com.mysql:mysql-connector-j'

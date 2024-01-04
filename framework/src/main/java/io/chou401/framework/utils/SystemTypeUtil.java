@@ -4,7 +4,7 @@ import io.chou401.common.constant.LoginConstant;
 import io.chou401.common.enums.SystemType;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * {@code @author}  chou401

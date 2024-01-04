@@ -2,7 +2,7 @@ apply from: 'config.gradle'
 
 // 构建 gradle 脚本自身需要的资源
 buildscript {
-    ext.springBootVersion = '2.7.18'
+    ext.springBootVersion = '3.1.4'
 
     // 仓库
     repositories {
@@ -41,8 +41,8 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     dependencies {
         annotationProcessor 'org.projectlombok:lombok'
