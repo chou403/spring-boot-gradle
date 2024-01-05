@@ -19,7 +19,6 @@ import java.util.List;
 
 /**
  * MybatisPlus配置
- *
  * {@code @author}  chou401
  * {@code @date} 2023/11/25
  **/

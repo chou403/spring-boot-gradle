@@ -13,7 +13,6 @@ import java.util.Map;
 
 /**
  * 微信小程序接口调用工具类
- *
  * {@code @author}  chou401
  * {@code @date} 2023/11/26
  **/
@@ -51,7 +50,7 @@ public class WxMpApi {
         String errcode = jsonObject.getString("errcode");
         String errmsg = jsonObject.getString("errmsg");
         if (StringUtils.isBlank(openid)) {
-            log.error("微信小程序登录失败,errcode:{},errmsg", errcode, errmsg);
+            log.error("微信小程序登录失败,errcode:{},errmsg:{}", errcode, errmsg);
             throw new BusinessException("微信小程序登录失败");
         }
         return openid;

@@ -1,6 +1,8 @@
 package io.chou401.framework.utils;
 
 import io.chou401.framework.bean.IpRegion;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.lionsoul.ip2region.xdb.Searcher;
@@ -8,14 +10,11 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 import java.io.IOException;
 import java.io.InputStream;
 
 /**
  * IP归属地信息工具类
- *
  * {@code @author}  chou401
  * {@code @date} 2023/6/23
  **/

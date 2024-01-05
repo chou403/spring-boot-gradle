@@ -5,7 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * Swagger属性配置
- *
  * {@code @author}  chou401
  * {@code @date} 2022/03/15
  **/

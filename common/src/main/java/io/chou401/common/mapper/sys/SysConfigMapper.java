@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * 系统配置 Mapper 接口
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023-11-27
  */
@@ -20,16 +19,16 @@ public interface SysConfigMapper extends BaseMapper<SysConfig> {
     /**
      * 系统配置详情
      *
-     * @param id
-     * @return
+     * @param id 配置 id
+     * @return 配置信息
      */
     SysConfigVo getSysConfigById(Long id);
 
     /**
      * 系统配置分页列表
      *
-     * @param query
-     * @return
+     * @param query 系统配置查询参数
+     * @return 列表
      */
     List<SysConfigVo> getSysConfigPage(SysConfigQuery query);
 

@@ -1,11 +1,11 @@
 package io.chou401.framework.filter;
 
-import org.springframework.util.StreamUtils;
-
 import jakarta.servlet.ReadListener;
 import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
+import org.springframework.util.StreamUtils;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -35,8 +35,7 @@ public class JsonHttpServletRequestWrapper extends HttpServletRequestWrapper {
      * @return
      */
     public String getBodyString() {
-        String bodyString = new String(body, StandardCharsets.UTF_8);
-        return bodyString;
+        return new String(body, StandardCharsets.UTF_8);
     }
 
     @Override

@@ -8,7 +8,6 @@ import java.util.List;
 
 /**
  * 多商户行级数据权限配置
- *
  * {@code @author}  chou401
  * {@code @date} 2023/12/05
  **/

@@ -3,16 +3,14 @@ package io.chou401.framework.interceptor.login;
 import io.chou401.common.cache.TokenCache;
 import io.chou401.framework.interceptor.BaseExcludeMethodInterceptor;
 import io.chou401.framework.utils.TokenUtil;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.method.HandlerMethod;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
 /**
  * Token拦截器
- *
  * {@code @author}  chou401
  * {@code @date} 2023/12/03
  **/

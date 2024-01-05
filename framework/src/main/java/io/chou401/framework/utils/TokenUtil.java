@@ -5,18 +5,16 @@ import io.chou401.common.cache.TokenCache;
 import io.chou401.common.constant.LoginConstant;
 import io.chou401.common.enums.SystemType;
 import io.chou401.framework.exception.LoginTokenException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
-
 /**
  * Token工具类
- *
  * {@code @author}  chou401
  * {@code @date} 2022-1-05
  **/
@@ -33,8 +31,7 @@ public class TokenUtil {
      */
     public static String generateAdminToken(Long userId) throws Exception {
         String userMd5 = DigestUtils.md5Hex(userId.toString());
-        String adminToken = LoginConstant.ADMIN_TOKEN_PREFIX + userMd5 + "." + IdWorker.getIdStr();
-        return adminToken;
+        return LoginConstant.ADMIN_TOKEN_PREFIX + userMd5 + "." + IdWorker.getIdStr();
     }
 
     /**
@@ -46,8 +43,7 @@ public class TokenUtil {
      */
     public static String generateAppToken(Long userId) throws Exception {
         String userMd5 = DigestUtils.md5Hex(userId.toString());
-        String appToken = LoginConstant.APP_TOKEN_PREFIX + userMd5 + "." + IdWorker.getIdStr();
-        return appToken;
+        return LoginConstant.APP_TOKEN_PREFIX + userMd5 + "." + IdWorker.getIdStr();
     }
 
     /**
@@ -60,8 +56,7 @@ public class TokenUtil {
     public static String getShortId(Long userId) throws Exception {
         // 将数字转换成数字加字母变为更短的字符串
         // 36 表示基数(10 位数字 + 26 个字符)
-        String string = Long.toString(userId, 36);
-        return string;
+        return Long.toString(userId, 36);
     }
 
     /**
@@ -72,8 +67,7 @@ public class TokenUtil {
      * @throws Exception
      */
     public static Long parseShortId(String shorUserId) throws Exception {
-        long userId = Long.parseLong(shorUserId, 36);
-        return userId;
+        return Long.parseLong(shorUserId, 36);
     }
 
     /**

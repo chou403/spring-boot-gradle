@@ -1,11 +1,13 @@
 package io.chou401.common.enums;
 
+import lombok.Getter;
+
 /**
  * 文件类型 1：图片，2：音视频，3：文档，4：文件
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023/11/27
  **/
+@Getter
 public enum SysFileType {
 
     IMAGE(1, "图片"),
@@ -13,8 +15,8 @@ public enum SysFileType {
     OFFICE(3, "文档"),
     FILE(4, "文件");
 
-    private Integer code;
-    private String desc;
+    private final Integer code;
+    private final String desc;
 
     SysFileType(Integer code, String desc) {
         this.code = code;
@@ -28,14 +30,6 @@ public enum SysFileType {
             }
         }
         return null;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getDesc() {
-        return desc;
     }
 
 }

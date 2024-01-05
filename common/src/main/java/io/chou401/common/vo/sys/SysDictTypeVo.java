@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 /**
  * 字典类型VO
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */

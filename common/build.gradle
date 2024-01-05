@@ -1,4 +1,4 @@
-description '项目依赖服务'
+description "依赖服务"
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'

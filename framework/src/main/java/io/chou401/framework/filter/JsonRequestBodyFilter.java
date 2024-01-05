@@ -1,11 +1,11 @@
 package io.chou401.framework.filter;
 
 import io.chou401.common.constant.CommonConstant;
+import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
@@ -22,8 +22,7 @@ public class JsonRequestBodyFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         JsonHttpServletRequestWrapper requestWrapper = null;
         try {
-            if (request instanceof HttpServletRequest) {
-                HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+            if (request instanceof HttpServletRequest httpServletRequest) {
                 String method = httpServletRequest.getMethod();
                 String contentType = httpServletRequest.getContentType();
                 if (METHOD_POST.equalsIgnoreCase(method) && StringUtils.isNotBlank(contentType)) {

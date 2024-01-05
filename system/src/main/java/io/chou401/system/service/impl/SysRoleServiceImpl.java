@@ -29,7 +29,6 @@ import java.util.stream.Collectors;
 
 /**
  * 系统角色 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2022-12-26
  */
@@ -96,8 +95,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     public Paging<SysRoleVo> getSysRolePage(SysRoleQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.desc("id"));
         List<SysRoleVo> list = sysRoleMapper.getSysRolePage(query);
-        Paging<SysRoleVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
     @Override

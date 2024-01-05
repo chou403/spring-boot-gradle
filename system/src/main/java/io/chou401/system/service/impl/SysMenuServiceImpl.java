@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 
 /**
  * 系统菜单 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2022-12-26
  */
@@ -139,10 +138,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     private List<SysMenuTreeVo> recursionSysMenuTreeList(Long parentId, List<SysMenuTreeVo> list) {
         return list.stream()
                 .filter(vo -> vo.getParentId().equals(parentId))
-                .map(item -> {
-                    item.setChildren(recursionSysMenuTreeList(item.getId(), list));
-                    return item;
-                })
+                .peek(item -> item.setChildren(recursionSysMenuTreeList(item.getId(), list)))
                 .collect(Collectors.toList());
     }
 
@@ -156,10 +152,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     private List<SysNavMenuTreeVo> recursionSysNavMenuTreeList(Long parentId, List<SysNavMenuTreeVo> list) {
         return list.stream()
                 .filter(vo -> vo.getParentId().equals(parentId))
-                .map(item -> {
-                    item.setChildren(recursionSysNavMenuTreeList(item.getId(), list));
-                    return item;
-                })
+                .peek(item -> item.setChildren(recursionSysNavMenuTreeList(item.getId(), list)))
                 .collect(Collectors.toList());
     }
 

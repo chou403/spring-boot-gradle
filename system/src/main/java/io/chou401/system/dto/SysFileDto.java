@@ -4,12 +4,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
-import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
  * 修改系统文件参数
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-26
  */

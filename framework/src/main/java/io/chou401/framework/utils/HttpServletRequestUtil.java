@@ -2,15 +2,13 @@ package io.chou401.framework.utils;
 
 import io.chou401.common.constant.CommonConstant;
 import io.chou401.common.constant.RequestHeadConstant;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 /**
  * 获取当前请求的HttpServletRequest对象
- *
  * {@code @author}  chou401
  * {@code @date} 2018-11-08
  */

@@ -19,7 +19,6 @@ import java.util.List;
 
 /**
  * 字典类型 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */
@@ -78,8 +77,7 @@ public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDi
 
     @Override
     public List<SysDictTypeVo> getSysDictTypeList(SysDictTypeQuery query) throws Exception {
-        List<SysDictTypeVo> list = sysDictTypeMapper.getSysDictTypeList(query);
-        return list;
+        return sysDictTypeMapper.getSysDictTypeList(query);
     }
 
     @Override

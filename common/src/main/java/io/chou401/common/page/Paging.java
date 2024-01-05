@@ -11,11 +11,9 @@ import java.util.List;
 
 /**
  * 分页结果
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2018-11-08
  */
-
 @Slf4j
 @Data
 @Schema(description = "分页结果")

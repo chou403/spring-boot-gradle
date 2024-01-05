@@ -2,11 +2,10 @@ package io.chou401.framework.interceptor;
 
 import io.chou401.framework.annotation.IgnoreLogin;
 import io.chou401.framework.annotation.Login;
-import org.springframework.web.method.HandlerMethod;
-import org.springframework.web.servlet.HandlerInterceptor;
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
  * {@code @author}  chou401
@@ -27,8 +26,7 @@ public abstract class BaseMethodInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (handler instanceof HandlerMethod) {
-            HandlerMethod handlerMethod = (HandlerMethod) handler;
+        if (handler instanceof HandlerMethod handlerMethod) {
             return preHandleMethod(request, response, handlerMethod);
         }
         return true;

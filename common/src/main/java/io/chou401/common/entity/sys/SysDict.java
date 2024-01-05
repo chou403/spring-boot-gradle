@@ -11,7 +11,6 @@ import java.util.Date;
 
 /**
  * 字典数据
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */

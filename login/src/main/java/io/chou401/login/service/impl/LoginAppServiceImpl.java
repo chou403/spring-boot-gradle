@@ -132,7 +132,7 @@ public class LoginAppServiceImpl implements LoginAppService {
         Long userId = user.getId();
         // 校验用户状态
         Boolean status = user.getStatus();
-        if (status == false) {
+        if (!status) {
             throw new LoginException("用户已禁用");
         }
         // 设置登录用户对象

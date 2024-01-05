@@ -6,7 +6,6 @@ import io.chou401.common.entity.sys.SysRoleMenu;
 
 /**
  * 角色菜单关系表 服务接口
- *
  * {@code @author}  chou401
  * {@code @date} 2022-12-26
  */

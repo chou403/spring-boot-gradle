@@ -28,7 +28,6 @@ import java.util.stream.Collectors;
 
 /**
  * 字典数据 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */
@@ -78,16 +77,14 @@ public class SysDictServiceImpl extends ServiceImpl<SysDictMapper, SysDict> impl
     public Paging<SysDictVo> getSysDictPage(SysDictQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.orderBy("status desc,id desc"));
         List<SysDictVo> list = sysDictMapper.getSysDictPage(query);
-        Paging<SysDictVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
     @Override
     public Map<String, List<SysDictAppVo>> getAppSysDictList(SysDictAppQuery query) throws Exception {
         List<SysDictAppVo> list = sysDictMapper.getAppSysDictList(query);
         if (CollectionUtils.isNotEmpty(list)) {
-            Map<String, List<SysDictAppVo>> map = list.stream().collect(Collectors.groupingBy(SysDictAppVo::getDictCode));
-            return map;
+            return list.stream().collect(Collectors.groupingBy(SysDictAppVo::getDictCode));
         }
         return null;
     }

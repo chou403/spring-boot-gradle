@@ -6,6 +6,7 @@ import io.chou401.framework.filter.TraceIdLogFilter;
 import io.chou401.framework.interceptor.PageHelperClearInterceptor;
 import io.chou401.framework.interceptor.login.*;
 import io.chou401.framework.xss.XssFilter;
+import jakarta.servlet.Filter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -93,8 +94,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 
     @Bean
-    public FilterRegistrationBean traceIdLogFilter() {
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+    public FilterRegistrationBean<Filter> traceIdLogFilter() {
+        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         TraceIdLogFilter traceIdLogFilter = new TraceIdLogFilter();
         filterRegistrationBean.setFilter(traceIdLogFilter);
         filterRegistrationBean.setUrlPatterns(Arrays.asList("/*"));
@@ -102,8 +103,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public FilterRegistrationBean jsonRequestBodyFilter() {
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+    public FilterRegistrationBean<Filter> jsonRequestBodyFilter() {
+        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         JsonRequestBodyFilter jsonRequestBodyFilter = new JsonRequestBodyFilter();
         filterRegistrationBean.setFilter(jsonRequestBodyFilter);
         List<String> urls = new ArrayList<>();
@@ -118,8 +119,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
      * @return
      */
     @Bean
-    public FilterRegistrationBean xssFilter() {
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+    public FilterRegistrationBean<Filter> xssFilter() {
+        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new XssFilter());
         filterRegistrationBean.setEnabled(xssProperties.isEnable());
         filterRegistrationBean.addUrlPatterns(xssProperties.getUrlPatterns());

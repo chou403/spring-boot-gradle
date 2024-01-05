@@ -31,7 +31,6 @@ import java.util.List;
 
 /**
  * 系统用户 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2022-12-26
  */
@@ -92,8 +91,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     public Paging<SysUserVo> getSysUserPage(SysUserQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.desc("id"));
         List<SysUserVo> list = sysUserMapper.getSysUserPage(query);
-        Paging<SysUserVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -124,9 +122,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         lambdaUpdateWrapper.set(SysUser::getGender, sysUserUpdateProfileDto.getGender());
         lambdaUpdateWrapper.set(SysUser::getHead, sysUserUpdateProfileDto.getHead());
         lambdaUpdateWrapper.eq(SysUser::getId, id);
-        boolean flag = update(lambdaUpdateWrapper);
         // TODO 更新缓存中的用户信息
-        return flag;
+        return update(lambdaUpdateWrapper);
     }
 
     @Transactional(rollbackFor = Exception.class)

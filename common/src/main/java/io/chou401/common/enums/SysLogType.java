@@ -1,5 +1,7 @@
 package io.chou401.common.enums;
 
+import lombok.Getter;
+
 /**
  * 系统日志类型
  * 0:访问日志,1:新增,2:修改,3:删除,4:详情,5:所有列表,6:分页列表,7:其它查询,8:上传文件,9:登录,10:退出
@@ -7,6 +9,7 @@ package io.chou401.common.enums;
  * {@code @author}  chou401
  * {@code @date} 2023/2/15
  **/
+@Getter
 public enum SysLogType {
 
     OTHER(0, "访问日志"),
@@ -21,8 +24,8 @@ public enum SysLogType {
     Login(9, "登录"),
     LOGOUT(10, "退出");
 
-    private Integer code;
-    private String desc;
+    private final Integer code;
+    private final String desc;
 
     SysLogType(Integer code, String desc) {
         this.code = code;
@@ -39,14 +42,6 @@ public enum SysLogType {
             }
         }
         return OTHER;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getDesc() {
-        return desc;
     }
 
 }

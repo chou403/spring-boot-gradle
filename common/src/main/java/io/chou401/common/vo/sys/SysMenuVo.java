@@ -8,7 +8,6 @@ import java.util.Date;
 
 /**
  * 系统菜单VO
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2022-12-26
  */

@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 /**
  * CPU信息
- *
  * {@code @author}  chou401
  * {@code @date} 2023-12-16
  */

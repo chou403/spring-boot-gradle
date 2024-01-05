@@ -220,8 +220,7 @@ public class MerchantLineInnerInterceptor extends BaseMultiTableInnerInterceptor
         if (fromItem instanceof Table) {
             processPlainSelect(plainSelect, whereSegment);
             appendSelectItem(plainSelect.getSelectItems());
-        } else if (fromItem instanceof SubSelect) {
-            SubSelect subSelect = (SubSelect) fromItem;
+        } else if (fromItem instanceof SubSelect subSelect) {
             appendSelectItem(plainSelect.getSelectItems());
             processInsertSelect(subSelect.getSelectBody(), whereSegment);
         }

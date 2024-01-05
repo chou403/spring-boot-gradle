@@ -1,4 +1,4 @@
-description '项目依赖服务'
+description '架构配置'
 
 dependencies {
     api project(':common')
@@ -19,6 +19,8 @@ dependencies {
     implementation 'org.aspectj:aspectjtools'
     implementation 'io.swagger.core.v3:swagger-models-jakarta'
     implementation 'org.springdoc:springdoc-openapi-webmvc-core'
+    implementation 'org.apache.commons:commons-text'
+
 
 }
 

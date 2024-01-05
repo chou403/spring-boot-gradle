@@ -21,7 +21,6 @@ import java.util.List;
 
 /**
  * 系统文件 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-26
  */
@@ -63,8 +62,7 @@ public class SysFileServiceImpl extends ServiceImpl<SysFileMapper, SysFile> impl
     public Paging<SysFileVo> getSysFilePage(SysFileQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.desc("id"));
         List<SysFileVo> list = sysFileMapper.getSysFilePage(query);
-        Paging<SysFileVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
 }

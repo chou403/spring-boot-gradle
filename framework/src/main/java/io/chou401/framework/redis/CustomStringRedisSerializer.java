@@ -12,7 +12,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Slf4j
 public class CustomStringRedisSerializer extends StringRedisSerializer {
 
-    private String redisKeyPrefix;
+    private final String redisKeyPrefix;
 
     public CustomStringRedisSerializer(String redisKeyPrefix) {
         this.redisKeyPrefix = redisKeyPrefix;

@@ -11,8 +11,6 @@ public @interface Log {
 
     /**
      * 描述
-     *
-     * @return
      */
     String value() default "";
 

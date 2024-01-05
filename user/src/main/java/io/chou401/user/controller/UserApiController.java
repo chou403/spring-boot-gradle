@@ -82,7 +82,7 @@ public class UserApiController {
     /**
      * 根据账号获取用户
      *
-     * @param id
+     * @param username
      * @return
      * @throws Exception
      */

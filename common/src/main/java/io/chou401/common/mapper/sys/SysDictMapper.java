@@ -22,24 +22,24 @@ public interface SysDictMapper extends BaseMapper<SysDict> {
     /**
      * 字典数据详情
      *
-     * @param id
-     * @return
+     * @param id 字典 id
+     * @return 字典信息
      */
     SysDictVo getSysDictById(Long id);
 
     /**
      * 字典数据分页列表
      *
-     * @param query
-     * @return
+     * @param query 查询参数
+     * @return 查询列表
      */
     List<SysDictVo> getSysDictPage(SysDictQuery query);
 
     /**
      * App字典数据列表
      *
-     * @param query
-     * @return
+     * @param query 查询参数
+     * @return 查询列表
      */
     List<SysDictAppVo> getAppSysDictList(SysDictAppQuery query);
 

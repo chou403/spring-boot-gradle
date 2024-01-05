@@ -1,18 +1,21 @@
 package io.chou401.common.enums;
 
+import lombok.Getter;
+
 /**
  * 系统类型
  * <p>
  * {@code @author}  chou401
  * {@code @date} 2023/11/15
  **/
+@Getter
 public enum SystemType {
 
     ADMIN(1, "Admin管理后台"),
     APP(2, "APP移动端端");
 
-    private Integer code;
-    private String desc;
+    private final Integer code;
+    private final String desc;
 
     SystemType(Integer code, String desc) {
         this.code = code;
@@ -26,14 +29,6 @@ public enum SystemType {
             }
         }
         return null;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getDesc() {
-        return desc;
     }
 
 }

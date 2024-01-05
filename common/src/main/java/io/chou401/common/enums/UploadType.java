@@ -1,5 +1,7 @@
 package io.chou401.common.enums;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
  * {@code @author}  chou401
  * {@code @date} 2023/11/26
  **/
+@Getter
 public enum UploadType {
 
     ANY("any", 100, null, "任意文件不限制上传"),
@@ -19,13 +22,13 @@ public enum UploadType {
     HEAD("head", 10, Arrays.asList("jpg", "jpeg", "png"), "用户头像上传");
     // 更多自定义即可
 
-    private String type;
-    private Integer maxSizeMb;
+    private final String type;
+    private final Integer maxSizeMb;
     /**
      * 文件后缀都使用小写
      */
-    private List<String> extensions;
-    private String desc;
+    private final List<String> extensions;
+    private final String desc;
 
     UploadType(String type, Integer maxSizeMb, List<String> extensions, String desc) {
         this.type = type;
@@ -41,22 +44,6 @@ public enum UploadType {
             }
         }
         return null;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public Integer getMaxSizeMb() {
-        return maxSizeMb;
-    }
-
-    public List<String> getExtensions() {
-        return extensions;
-    }
-
-    public String getDesc() {
-        return desc;
     }
 
 }

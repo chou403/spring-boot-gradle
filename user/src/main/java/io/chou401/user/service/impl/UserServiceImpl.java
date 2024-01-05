@@ -24,7 +24,6 @@ import java.util.List;
 
 /**
  * 用户信息 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */
@@ -88,8 +87,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public Paging<UserVo> getUserPage(UserQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.desc("id"));
         List<UserVo> list = userMapper.getUserPage(query);
-        Paging<UserVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
     @Override
@@ -101,8 +99,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public Paging<UserAppVo> getAppUserPage(UserAppQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.desc("id"));
         List<UserAppVo> list = userMapper.getAppUserPage(query);
-        Paging<UserAppVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
 }

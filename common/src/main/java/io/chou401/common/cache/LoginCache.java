@@ -6,7 +6,6 @@ import io.chou401.common.vo.login.LoginVo;
 /**
  * 在当前线程中缓存管理后台登录信息
  * 如果开启多线程需要获取
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023/12/7
  **/
@@ -20,7 +19,7 @@ public class LoginCache {
     /**
      * 设置管理后台登录信息到当前线程中
      *
-     * @param loginVo
+     * @param loginVo 登录信息
      */
     public static void set(LoginVo loginVo) {
         LOGIN_CACHE.set(loginVo);
@@ -29,7 +28,7 @@ public class LoginCache {
     /**
      * 从当前线程获取管理后台登录信息
      *
-     * @return
+     * @return 登录信息
      */
     public static LoginVo get() {
         return LOGIN_CACHE.get();

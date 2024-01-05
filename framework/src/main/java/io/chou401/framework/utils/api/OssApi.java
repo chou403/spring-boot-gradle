@@ -11,18 +11,17 @@ import com.aliyun.oss.model.PutObjectRequest;
 import com.aliyun.oss.model.PutObjectResult;
 import io.chou401.framework.config.properties.OssProperties;
 import io.chou401.framework.exception.BusinessException;
+import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import jakarta.annotation.PostConstruct;
 import java.io.InputStream;
 
 /**
  * OSS接口调用工具类
- *
  * {@code @author}  chou401
  * {@code @date} 2023/11/26
  **/

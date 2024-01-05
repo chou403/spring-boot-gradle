@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 用户信息 控制器
- * <p>
  * {@code @author}  chou401
- *
  * {@code @date} 2023-11-30
  */
 @Slf4j

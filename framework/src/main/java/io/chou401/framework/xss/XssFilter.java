@@ -1,14 +1,13 @@
 package io.chou401.framework.xss;
 
 import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
-import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
  * Xss过滤器
- *
  * {@code @author}  chou401
  * {@code @date} 2019-10-10
  **/

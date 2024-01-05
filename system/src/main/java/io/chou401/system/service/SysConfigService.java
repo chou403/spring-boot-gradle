@@ -10,7 +10,6 @@ import io.chou401.system.dto.SysConfigDto;
 
 /**
  * 系统配置 服务接口
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-27
  */

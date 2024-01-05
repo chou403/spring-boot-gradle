@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 字典数据 控制器
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */

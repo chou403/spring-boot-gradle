@@ -2,8 +2,8 @@ package io.chou401.framework.utils;
 
 import com.alibaba.fastjson2.JSON;
 import io.chou401.framework.response.ApiResult;
-
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -13,8 +13,8 @@ import java.io.PrintWriter;
  */
 public final class HttpServletResponseUtil {
 
-    private static String UTF8 = "UTF-8";
-    private static String CONTENT_TYPE = "application/json";
+    private static final String UTF8 = "UTF-8";
+    private static final String CONTENT_TYPE = "application/json";
 
     private HttpServletResponseUtil() {
         throw new AssertionError();

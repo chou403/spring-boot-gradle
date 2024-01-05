@@ -22,7 +22,6 @@ import java.util.List;
 
 /**
  * 系统配置 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-27
  */
@@ -73,8 +72,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
     public Paging<SysConfigVo> getSysConfigPage(SysConfigQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.desc("id"));
         List<SysConfigVo> list = sysConfigMapper.getSysConfigPage(query);
-        Paging<SysConfigVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
     @Override

@@ -1,18 +1,20 @@
 package io.chou401.common.enums;
 
+import lombok.Getter;
+
 /**
  * 系统类型
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023/11/15
  **/
+@Getter
 public enum FileServerType {
 
     LOCAL(1, "本地文件服务"),
     OSS(2, "OSS文件服务");
 
-    private Integer code;
-    private String desc;
+    private final Integer code;
+    private final String desc;
 
     FileServerType(Integer code, String desc) {
         this.code = code;
@@ -26,14 +28,6 @@ public enum FileServerType {
             }
         }
         return null;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getDesc() {
-        return desc;
     }
 
 }

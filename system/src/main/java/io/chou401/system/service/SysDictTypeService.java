@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  * 字典类型 服务接口
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */

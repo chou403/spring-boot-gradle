@@ -79,7 +79,7 @@ public class LoginServiceImpl implements LoginService {
         Long userId = sysUser.getId();
         // 校验用户状态
         Boolean status = sysUser.getStatus();
-        if (status == false) {
+        if (!status) {
             throw new BusinessException("用户已禁用");
         }
         // 查询用户角色

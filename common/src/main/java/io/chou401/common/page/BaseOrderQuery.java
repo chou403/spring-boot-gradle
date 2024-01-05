@@ -7,7 +7,6 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 排序查询参数
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023-11-15
  */

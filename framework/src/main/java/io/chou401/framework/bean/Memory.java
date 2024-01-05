@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 
 /**
  * 内存信息
- *
  * {@code @author}  chou401
  * {@code @date} 2023/12/16
  **/

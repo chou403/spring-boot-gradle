@@ -23,8 +23,7 @@ public class PasswordUtil {
             password = DigestUtils.md5Hex(password);
         }
         // 将md5加密后的结果+盐，再进行sha256加密
-        String encryptPassword = DigestUtils.sha256Hex(password + salt);
-        return encryptPassword;
+        return DigestUtils.sha256Hex(password + salt);
     }
 
 }

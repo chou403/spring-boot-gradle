@@ -8,7 +8,6 @@ import java.io.Serializable;
 
 /**
  * 数据范围查询
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2022/3/11
  **/

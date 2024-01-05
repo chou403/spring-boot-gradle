@@ -11,7 +11,6 @@ import java.util.Date;
 
 /**
  * 系统用户
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2022-12-26
  */

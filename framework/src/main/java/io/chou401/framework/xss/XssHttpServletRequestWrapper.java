@@ -1,14 +1,12 @@
 package io.chou401.framework.xss;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringEscapeUtils;
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.text.StringEscapeUtils;
 
 /**
  * XSS 跨站脚本攻击(Cross Site Scripting) 处理
- *
  * {@code @author}  chou401
  * {@code @date} 2019-10-10
  **/

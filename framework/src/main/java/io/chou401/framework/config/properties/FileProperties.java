@@ -6,7 +6,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * 上传文件属性配置
- *
  * {@code @author}  chou401
  * {@code @date} 2023/06/18
  **/

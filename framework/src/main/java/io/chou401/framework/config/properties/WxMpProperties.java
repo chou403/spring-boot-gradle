@@ -5,7 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * 微信小程序属性配置
- *
  * {@code @author}  chou401
  * {@code @date} 2023/11/26
  **/

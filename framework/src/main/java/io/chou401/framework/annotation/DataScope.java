@@ -4,7 +4,6 @@ import java.lang.annotation.*;
 
 /**
  * 数据权限范围注解
- *
  * {@code @author}  chou401
  * {@code @date} 2023/12/02
  **/
@@ -17,15 +16,11 @@ public @interface DataScope {
 
     /**
      * 用户表别名
-     *
-     * @return
      */
     String userAlias() default "";
 
     /**
      * 筛选的userId列
-     *
-     * @return
      */
     String userIdColumn() default "id";
 

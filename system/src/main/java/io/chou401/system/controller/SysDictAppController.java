@@ -18,7 +18,6 @@ import java.util.Map;
 
 /**
  * App字典数据 控制器
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */

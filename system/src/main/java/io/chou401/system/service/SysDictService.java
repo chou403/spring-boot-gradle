@@ -16,7 +16,6 @@ import java.util.Map;
 
 /**
  * 字典数据 服务接口
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */

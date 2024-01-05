@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 系统配置 控制器
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-27
  */

@@ -33,8 +33,7 @@ public class LoginUtil {
         if (StringUtils.isBlank(token)) {
             return null;
         }
-        LoginVo loginVo = loginRedisService.getLoginVo(token);
-        return loginVo;
+        return loginRedisService.getLoginVo(token);
     }
 
     /**
@@ -67,8 +66,7 @@ public class LoginUtil {
     public static Long getUserId() throws Exception {
         LoginVo loginVo = getLoginVo();
         if (loginVo != null) {
-            Long userId = loginVo.getUserId();
-            return userId;
+            return loginVo.getUserId();
         }
         return null;
     }

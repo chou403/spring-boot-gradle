@@ -44,8 +44,7 @@ public class LoginRedisServiceImpl implements LoginRedisService {
 
     @Override
     public String getLoginRedisKey(String token) throws Exception {
-        String loginRedisKey = String.format(RedisKey.LOGIN_TOKEN, token);
-        return loginRedisKey;
+        return String.format(RedisKey.LOGIN_TOKEN, token);
     }
 
     @Override
@@ -68,8 +67,7 @@ public class LoginRedisServiceImpl implements LoginRedisService {
             throw new LoginTokenException("token不能为空");
         }
         String loginRedisKey = getLoginRedisKey(token);
-        LoginVo loginVo = (LoginVo) redisTemplate.opsForValue().get(loginRedisKey);
-        return loginVo;
+        return (LoginVo) redisTemplate.opsForValue().get(loginRedisKey);
     }
 
     @Override
@@ -95,7 +93,7 @@ public class LoginRedisServiceImpl implements LoginRedisService {
 
     @Override
     public void deleteLoginInfoByToken(String token) throws Exception {
-        log.info("清除用户的所有redis登录信息：" + token);
+        log.info("清除用户的所有redis登录信息：{}", token);
         if (StringUtils.isBlank(token)) {
             throw new LoginTokenException("token不能为空");
         }

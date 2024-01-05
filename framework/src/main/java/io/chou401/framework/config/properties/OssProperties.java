@@ -5,7 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * 阿里云OSS配置
- *
  * {@code @author}  chou401
  * {@code @date} 2023/11/26
  **/

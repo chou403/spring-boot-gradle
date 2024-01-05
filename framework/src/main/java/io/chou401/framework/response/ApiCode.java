@@ -1,11 +1,13 @@
 package io.chou401.framework.response;
 
+import lombok.Getter;
+
 /**
  * REST API 响应码
- *
  * {@code @author}  chou401
  * {@code @date} 2022-3-16
  */
+@Getter
 public enum ApiCode {
 
     /**
@@ -37,14 +39,6 @@ public enum ApiCode {
             }
         }
         return FAIL;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public String getMsg() {
-        return msg;
     }
 
 }

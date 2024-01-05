@@ -16,7 +16,6 @@ import java.util.List;
 
 /**
  * 系统日志 服务实现类
- *
  * {@code @author}  chou401
  * {@code @date} 2023-02-16
  */
@@ -39,8 +38,7 @@ public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> impleme
     public Paging<SysLogVo> getSysLogPage(SysLogQuery query) throws Exception {
         PagingUtil.handlePage(query, OrderByItem.desc("id"));
         List<SysLogVo> list = sysLogMapper.getSysLogPage(query);
-        Paging<SysLogVo> paging = new Paging<>(list);
-        return paging;
+        return new Paging<>(list);
     }
 
 }

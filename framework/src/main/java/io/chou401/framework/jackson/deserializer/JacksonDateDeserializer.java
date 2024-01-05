@@ -39,10 +39,9 @@ public class JacksonDateDeserializer extends JsonDeserializer<Date> {
         }
         Date date = null;
         boolean flag = false;
-        for (int i = 0; i < DATE_PATTERNS.length; i++) {
+        for (String pattern : DATE_PATTERNS) {
             try {
-                String datePattern = DATE_PATTERNS[i];
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(datePattern);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
                 date = simpleDateFormat.parse(dateString);
                 flag = true;
                 break;

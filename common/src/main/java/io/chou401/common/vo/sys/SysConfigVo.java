@@ -8,7 +8,6 @@ import java.util.Date;
 
 /**
  * 系统配置VO
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023-11-27
  */

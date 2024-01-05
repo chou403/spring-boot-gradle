@@ -1,4 +1,4 @@
-description '项目依赖服务'
+description '用户服务'
 
 dependencies {
     api project(':common')

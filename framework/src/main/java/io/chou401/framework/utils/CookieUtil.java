@@ -63,8 +63,7 @@ public class CookieUtil {
         for (Cookie cookie : cookies) {
             String name = cookie.getName();
             if (name.equals(cookieName)) {
-                String value = cookie.getValue();
-                return value;
+                return cookie.getValue();
             }
         }
         return null;

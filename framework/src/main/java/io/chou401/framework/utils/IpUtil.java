@@ -1,15 +1,10 @@
 package io.chou401.framework.utils;
 
-/**
- * {@code @author}  chou401
- * {@code @date} 2022/7/31
- **/
-
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import jakarta.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -19,7 +14,10 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.regex.Pattern;
 
-
+/**
+ * {@code @author}  chou401
+ * {@code @date} 2022/7/31
+ **/
 @Slf4j
 public class IpUtil {
     private static final String UNKNOWN = "unknown";
@@ -36,7 +34,7 @@ public class IpUtil {
     public static String getRequestIp() {
         HttpServletRequest request = HttpServletRequestUtil.getRequest();
         String ip = getRequestIp(request);
-        if (ip.indexOf(COMMA) != -1) {
+        if (ip.contains(COMMA)) {
             String[] strings = ip.split(COMMA);
             ip = strings[0];
         }

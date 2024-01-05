@@ -18,7 +18,6 @@ import java.util.List;
 
 /**
  * 字典类型 控制器
- *
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */

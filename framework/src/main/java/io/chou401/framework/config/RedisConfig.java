@@ -10,7 +10,6 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 
 /**
  * Redis Template 配置
- *
  * {@code @author}  chou401
  * {@code @date} 2022-1-7
  */

@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 /**
  * 项目信息
- *
  * {@code @author}  chou401
  * {@code @date} 2023/12/17
  **/

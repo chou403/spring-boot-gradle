@@ -8,7 +8,6 @@ import java.util.List;
 
 /**
  * 框架公共配置
- *
  * {@code @author}  chou401
  * {@code @date} 2023/12/03
  **/

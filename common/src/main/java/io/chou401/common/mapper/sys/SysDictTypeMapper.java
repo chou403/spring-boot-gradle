@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * 字典类型 Mapper 接口
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */
@@ -20,16 +19,16 @@ public interface SysDictTypeMapper extends BaseMapper<SysDictType> {
     /**
      * 字典类型详情
      *
-     * @param id
-     * @return
+     * @param id 字典类型 id
+     * @return 字典类型信息
      */
     SysDictTypeVo getSysDictTypeById(Long id);
 
     /**
      * 字典类型列表
      *
-     * @param query
-     * @return
+     * @param query 参数
+     * @return 列表
      */
     List<SysDictTypeVo> getSysDictTypeList(SysDictTypeQuery query);
 

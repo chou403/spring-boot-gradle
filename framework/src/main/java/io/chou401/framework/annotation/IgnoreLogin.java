@@ -4,7 +4,6 @@ import java.lang.annotation.*;
 
 /**
  * 忽略登录的注解
- *
  * {@code @author}  chou401
  * {@code @date} 2022/6/26
  **/

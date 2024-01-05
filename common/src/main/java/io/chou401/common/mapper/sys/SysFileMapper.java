@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * 系统文件 Mapper 接口
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023-11-26
  */
@@ -20,16 +19,16 @@ public interface SysFileMapper extends BaseMapper<SysFile> {
     /**
      * 系统文件详情
      *
-     * @param id
-     * @return
+     * @param id id
+     * @return 详情
      */
     SysFileVo getSysFileById(Long id);
 
     /**
      * 系统文件分页列表
      *
-     * @param query
-     * @return
+     * @param query 参数
+     * @return 列表
      */
     List<SysFileVo> getSysFilePage(SysFileQuery query);
 

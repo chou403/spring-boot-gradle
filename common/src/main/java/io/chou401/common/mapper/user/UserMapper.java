@@ -12,7 +12,6 @@ import java.util.List;
 
 /**
  * 用户信息 Mapper 接口
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023-11-25
  */
@@ -22,32 +21,32 @@ public interface UserMapper extends BaseMapper<User> {
     /**
      * 用户信息详情
      *
-     * @param id
-     * @return
+     * @param id 用户 id
+     * @return 用户详情
      */
     UserVo getUserById(Long id);
 
     /**
      * 用户信息分页列表
      *
-     * @param query
-     * @return
+     * @param query 参数
+     * @return 用户列表
      */
     List<UserVo> getUserPage(UserQuery query);
 
     /**
      * App用户信息详情
      *
-     * @param id
-     * @return
+     * @param id 用户 id
+     * @return 用户详情
      */
     UserAppVo getAppUserById(Long id);
 
     /**
      * App用户信息分页列表
      *
-     * @param query
-     * @return
+     * @param query 参数
+     * @return 用户列表
      */
     List<UserAppVo> getAppUserPage(UserAppQuery query);
 

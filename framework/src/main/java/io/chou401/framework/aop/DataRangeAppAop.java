@@ -28,8 +28,7 @@ public class DataRangeAppAop {
             return joinPoint.proceed();
         }
         for (Object arg : args) {
-            if (arg instanceof DataRangeQuery) {
-                DataRangeQuery dataRangeQuery = (DataRangeQuery) arg;
+            if (arg instanceof DataRangeQuery dataRangeQuery) {
                 DataRangeUtil.handleAppLogin(dataRangeQuery);
                 break;
             }

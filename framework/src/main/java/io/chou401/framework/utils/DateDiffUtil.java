@@ -24,8 +24,7 @@ public class DateDiffUtil {
         long minute = (diff % (60 * 60)) / 60;
         // 计算秒数
         long second = diff % 60;
-        String desc = day + "天" + hour + "小时" + minute + "分钟" + second + "秒";
-        return desc;
+        return day + "天" + hour + "小时" + minute + "分钟" + second + "秒";
     }
 
 }

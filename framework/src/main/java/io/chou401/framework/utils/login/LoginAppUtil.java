@@ -31,8 +31,7 @@ public class LoginAppUtil {
         if (StringUtils.isBlank(token)) {
             return null;
         }
-        LoginAppVo loginAppVo = loginRedisAppService.getLoginVo(token);
-        return loginAppVo;
+        return loginRedisAppService.getLoginVo(token);
     }
 
     /**

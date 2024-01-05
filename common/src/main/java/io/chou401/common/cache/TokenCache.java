@@ -3,7 +3,6 @@ package io.chou401.common.cache;
 /**
  * 在当前线程中缓存token
  * 如果开启多线程需要获取
- * <p>
  * {@code @author}  chou401
  * {@code @date} 2023/12/7
  **/
@@ -17,7 +16,7 @@ public class TokenCache {
     /**
      * 设置token值到当前线程中
      *
-     * @param token
+     * @param token token
      */
     public static void set(String token) {
         TOKEN_CACHE.set(token);
@@ -26,7 +25,7 @@ public class TokenCache {
     /**
      * 从当前线程获取token值
      *
-     * @return
+     * @return token
      */
     public static String get() {
         return TOKEN_CACHE.get();
