@@ -38,7 +38,7 @@ public class Paging<T> implements Serializable {
 
     public Paging(List<T> list) {
         this.list = list;
-        Page page = (Page) list;
+        Page<T> page = (Page<T>) list;
         this.total = page.getTotal();
         this.pageIndex = page.getPageNum();
         this.pageSize = page.getPageSize();

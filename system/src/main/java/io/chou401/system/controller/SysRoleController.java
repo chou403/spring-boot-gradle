@@ -107,7 +107,7 @@ public class SysRoleController {
      */
     @PostMapping("/getSysRolePage")
     @Operation(summary = "系统角色分页列表")
-    @Permission("sys:role:page")
+    @Permission("sys:role:list")
     public ApiResult<SysRoleVo> getSysRolePage(@Valid @RequestBody SysRoleQuery query) throws Exception {
         Paging<SysRoleVo> paging = sysRoleService.getSysRolePage(query);
         return ApiResult.success(paging);

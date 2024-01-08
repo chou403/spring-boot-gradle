@@ -104,7 +104,7 @@ public class SysUserController {
      */
     @PostMapping("/getSysUserPage")
     @Operation(summary = "系统用户分页列表")
-    @Permission("sys:user:page")
+    @Permission("sys:user:list")
     public ApiResult<SysUserVo> getSysUserPage(@Valid @RequestBody SysUserQuery query) throws Exception {
         Paging<SysUserVo> paging = sysUserService.getSysUserPage(query);
         return ApiResult.success(paging);
