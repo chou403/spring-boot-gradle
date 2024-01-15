@@ -106,7 +106,7 @@ public class SysDictTypeController {
     @PostMapping("/getSysDictTypeList")
     @Operation(summary = "字典类型列表")
     @Permission("sys:dict:type:list")
-    public ApiResult<SysDictTypeVo> getSysDictTypeList(@Valid @RequestBody SysDictTypeQuery query) throws Exception {
+    public ApiResult<List<SysDictTypeVo>> getSysDictTypeList(@Valid @RequestBody SysDictTypeQuery query) throws Exception {
         List<SysDictTypeVo> list = sysDictTypeService.getSysDictTypeList(query);
         return ApiResult.success(list);
     }

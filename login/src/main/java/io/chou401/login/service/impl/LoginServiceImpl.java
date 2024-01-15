@@ -20,6 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -99,7 +100,11 @@ public class LoginServiceImpl implements LoginService {
         // 系统类型 1：管理后台，2：用户端
         loginVo.setSystemType(SystemType.ADMIN.getCode());
         // 获取登录用户的权限编码
-        List<String> permissions = sysMenuMapper.getPermissionCodesByUserId(userId);
+        List<String> permissions = new ArrayList<>();
+        permissions.add("*:*:*");
+        if (!sysUser.getIsAdmin()) {
+            permissions = sysMenuMapper.getPermissionCodesByUserId(userId);
+        }
         loginVo.setPermissions(permissions);
         // 保存登录信息到redis中
         loginRedisService.setLoginVo(token, loginVo);

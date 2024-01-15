@@ -105,7 +105,7 @@ public class UserController {
     @PostMapping("/getUserPage")
     @Operation(summary = "用户信息分页列表")
     @Permission("user:page")
-    public ApiResult<UserVo> getUserPage(@Valid @RequestBody UserQuery query) throws Exception {
+    public ApiResult<Paging<UserVo>> getUserPage(@Valid @RequestBody UserQuery query) throws Exception {
         Paging<UserVo> paging = userService.getUserPage(query);
         return ApiResult.success(paging);
     }

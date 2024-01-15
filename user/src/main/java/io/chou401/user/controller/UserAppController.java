@@ -51,7 +51,7 @@ public class UserAppController {
      */
     @PostMapping("/getAppUserPage")
     @Operation(summary = "App用户信息分页列表")
-    public ApiResult<UserAppVo> getAppUserPage(@Valid @RequestBody UserAppQuery query) throws Exception {
+    public ApiResult<Paging<UserAppVo>> getAppUserPage(@Valid @RequestBody UserAppQuery query) throws Exception {
         Paging<UserAppVo> paging = userService.getAppUserPage(query);
         return ApiResult.success(paging);
     }

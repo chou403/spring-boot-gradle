@@ -48,49 +48,49 @@ public class ApiResult<T> implements Serializable {
     @Schema(description = "日志链路ID")
     private String traceId;
 
-    public static ApiResult success() {
+    public static <T> ApiResult<T> success() {
         return success(null);
     }
 
-    public static ApiResult success(Object data) {
+    public static <T> ApiResult<T> success(T data) {
         return result(ApiCode.SUCCESS, data);
     }
 
-    public static ApiResult fail() {
+    public static <T> ApiResult<T> fail() {
         return fail(ApiCode.FAIL);
     }
 
-    public static ApiResult fail(String message) {
+    public static <T> ApiResult<T> fail(String message) {
         return fail(ApiCode.FAIL, message);
     }
 
-    public static ApiResult fail(ApiCode apiCode) {
+    public static <T> ApiResult<T> fail(ApiCode apiCode) {
         return fail(apiCode, null);
     }
 
-    public static ApiResult fail(ApiCode apiCode, String message) {
+    public static <T> ApiResult<T> fail(ApiCode apiCode, String message) {
         if (ApiCode.SUCCESS == apiCode) {
             throw new RuntimeException("失败结果状态码不能为" + ApiCode.SUCCESS.getCode());
         }
         return result(apiCode, message, null);
     }
 
-    public static ApiResult result(boolean flag) {
+    public static <T> ApiResult<T> result(boolean flag) {
         if (flag) {
             return success();
         }
         return fail();
     }
 
-    public static ApiResult result(ApiCode apiCode) {
+    public static <T> ApiResult<T> result(ApiCode apiCode) {
         return result(apiCode, null);
     }
 
-    public static ApiResult result(ApiCode apiCode, Object data) {
+    public static <T> ApiResult<T> result(ApiCode apiCode, T data) {
         return result(apiCode, null, data);
     }
 
-    public static ApiResult result(ApiCode apiCode, String message, Object data) {
+    public static <T> ApiResult<T> result(ApiCode apiCode, String message, T data) {
         if (apiCode == null) {
             throw new RuntimeException("结果状态码不能为空");
         }
@@ -106,7 +106,7 @@ public class ApiResult<T> implements Serializable {
             outMessage = message;
         }
         String traceId = MDC.get(CommonConstant.TRACE_ID);
-        return ApiResult.builder()
+        return ApiResult.<T>builder()
                 .code(code)
                 .msg(outMessage)
                 .data(data)

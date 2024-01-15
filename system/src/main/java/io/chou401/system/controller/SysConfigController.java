@@ -105,7 +105,7 @@ public class SysConfigController {
     @PostMapping("/getSysConfigPage")
     @Operation(summary = "系统配置分页列表")
     @Permission("sys:config:page")
-    public ApiResult<SysConfigVo> getSysConfigPage(@Valid @RequestBody SysConfigQuery query) throws Exception {
+    public ApiResult<Paging<SysConfigVo>> getSysConfigPage(@Valid @RequestBody SysConfigQuery query) throws Exception {
         Paging<SysConfigVo> paging = sysConfigService.getSysConfigPage(query);
         return ApiResult.success(paging);
     }

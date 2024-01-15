@@ -105,7 +105,7 @@ public class SysDictController {
     @PostMapping("/getSysDictPage")
     @Operation(summary = "字典数据分页列表")
     @Permission("sys:dict:page")
-    public ApiResult<SysDictVo> getSysDictPage(@Valid @RequestBody SysDictQuery query) throws Exception {
+    public ApiResult<Paging<SysDictVo>> getSysDictPage(@Valid @RequestBody SysDictQuery query) throws Exception {
         Paging<SysDictVo> paging = sysDictService.getSysDictPage(query);
         return ApiResult.success(paging);
     }

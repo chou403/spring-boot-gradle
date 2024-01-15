@@ -45,7 +45,7 @@ public class SysUserController {
     @PostMapping("/addSysUser")
     @Operation(summary = "添加系统用户")
     @Permission("sys:user:add")
-    public ApiResult addSysUser(@Valid @RequestBody SysUserDto dto) throws Exception {
+    public ApiResult<Boolean> addSysUser(@Valid @RequestBody SysUserDto dto) throws Exception {
         boolean flag = sysUserService.addSysUser(dto);
         return ApiResult.result(flag);
     }
@@ -60,7 +60,7 @@ public class SysUserController {
     @PostMapping("/updateSysUser")
     @Operation(summary = "修改系统用户")
     @Permission("sys:user:update")
-    public ApiResult updateSysUser(@Valid @RequestBody SysUserDto dto) throws Exception {
+    public ApiResult<Boolean> updateSysUser(@Valid @RequestBody SysUserDto dto) throws Exception {
         boolean flag = sysUserService.updateSysUser(dto);
         return ApiResult.result(flag);
     }
@@ -75,7 +75,7 @@ public class SysUserController {
     @PostMapping("/deleteSysUser/{id}")
     @Operation(summary = "删除系统用户")
     @Permission("sys:user:delete")
-    public ApiResult deleteSysUser(@PathVariable Long id) throws Exception {
+    public ApiResult<Boolean> deleteSysUser(@PathVariable Long id) throws Exception {
         boolean flag = sysUserService.deleteSysUser(id);
         return ApiResult.result(flag);
     }
@@ -105,7 +105,7 @@ public class SysUserController {
     @PostMapping("/getSysUserPage")
     @Operation(summary = "系统用户分页列表")
     @Permission("sys:user:list")
-    public ApiResult<SysUserVo> getSysUserPage(@Valid @RequestBody SysUserQuery query) throws Exception {
+    public ApiResult<Paging<SysUserVo>> getSysUserPage(@Valid @RequestBody SysUserQuery query) throws Exception {
         Paging<SysUserVo> paging = sysUserService.getSysUserPage(query);
         return ApiResult.success(paging);
     }
@@ -120,7 +120,7 @@ public class SysUserController {
     @PostMapping("/resetSysUserPassword")
     @Operation(summary = "重置系统用户密码")
     @Permission("sys:user:reset-password")
-    public ApiResult resetSysUserPassword(@Valid @RequestBody SysUserResetPasswordDto sysUserResetPasswordDto) throws Exception {
+    public ApiResult<Boolean> resetSysUserPassword(@Valid @RequestBody SysUserResetPasswordDto sysUserResetPasswordDto) throws Exception {
         boolean flag = sysUserService.resetSysUserPassword(sysUserResetPasswordDto);
         return ApiResult.result(flag);
     }
@@ -152,7 +152,7 @@ public class SysUserController {
     @PostMapping("/updateProfile")
     @Operation(summary = "修改个人信息")
     @Permission("sys:user:update-profile")
-    public ApiResult updateProfile(@Valid @RequestBody SysUserUpdateProfileDto sysUserUpdateProfileDto) throws Exception {
+    public ApiResult<Boolean> updateProfile(@Valid @RequestBody SysUserUpdateProfileDto sysUserUpdateProfileDto) throws Exception {
         boolean flag = sysUserService.updateProfile(sysUserUpdateProfileDto);
         return ApiResult.result(flag);
     }
@@ -167,7 +167,7 @@ public class SysUserController {
     @PostMapping("/updatePassword")
     @Operation(summary = "修改用户密码")
     @Permission("sys:user:update-password")
-    public ApiResult updatePassword(@Valid @RequestBody SysUserUpdatePasswordDto sysUserUpdatePasswordDto) throws Exception {
+    public ApiResult<Boolean> updatePassword(@Valid @RequestBody SysUserUpdatePasswordDto sysUserUpdatePasswordDto) throws Exception {
         boolean flag = sysUserService.updatePassword(sysUserUpdatePasswordDto);
         return ApiResult.result(flag);
     }

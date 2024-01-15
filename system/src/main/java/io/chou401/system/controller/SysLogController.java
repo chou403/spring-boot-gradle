@@ -54,7 +54,7 @@ public class SysLogController {
     @PostMapping("/getSysLogPage")
     @Operation(summary = "系统日志分页列表")
     @Permission("sys:log:page")
-    public ApiResult<SysLogVo> getSysLogPage(@Valid @RequestBody SysLogQuery query) throws Exception {
+    public ApiResult<Paging<SysLogVo>> getSysLogPage(@Valid @RequestBody SysLogQuery query) throws Exception {
         Paging<SysLogVo> paging = sysLogService.getSysLogPage(query);
         return ApiResult.success(paging);
     }

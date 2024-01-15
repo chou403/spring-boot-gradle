@@ -89,7 +89,7 @@ public class SysFileController {
     @PostMapping("/getSysFilePage")
     @Operation(summary = "系统文件分页列表")
     @Permission("sys:file:page")
-    public ApiResult<SysFileVo> getSysFilePage(@Valid @RequestBody SysFileQuery query) throws Exception {
+    public ApiResult<Paging<SysFileVo>> getSysFilePage(@Valid @RequestBody SysFileQuery query) throws Exception {
         Paging<SysFileVo> paging = sysFileService.getSysFilePage(query);
         return ApiResult.success(paging);
     }

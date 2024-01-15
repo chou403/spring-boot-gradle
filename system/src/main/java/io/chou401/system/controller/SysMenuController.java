@@ -102,7 +102,7 @@ public class SysMenuController {
     @PostMapping("/getAllSysMenuTreeList")
     @Operation(summary = "获取所有的系统菜单树形列表")
     @Permission("sys:menu:all-tree-list")
-    public ApiResult<SysMenuTreeVo> getAllSysMenuTreeList(@Valid @RequestBody SysMenuQuery query) throws Exception {
+    public ApiResult<List<SysMenuTreeVo>> getAllSysMenuTreeList(@Valid @RequestBody SysMenuQuery query) throws Exception {
         List<SysMenuTreeVo> list = sysMenuService.getAllSysMenuTreeList(query);
         return ApiResult.success(list);
     }
@@ -116,7 +116,7 @@ public class SysMenuController {
     @PostMapping("/getSysMenuTreeList")
     @Operation(summary = "获取启用的系统菜单树形列表")
     @Permission("sys:menu:tree-list")
-    public ApiResult<SysMenuTreeVo> getSysMenuTreeList() throws Exception {
+    public ApiResult<List<SysMenuTreeVo>> getSysMenuTreeList() throws Exception {
         List<SysMenuTreeVo> list = sysMenuService.getSysMenuTreeList();
         return ApiResult.success(list);
     }
@@ -129,7 +129,7 @@ public class SysMenuController {
      */
     @PostMapping("/getNavMenuTreeList")
     @Operation(summary = "获取当前用户的导航菜单")
-    public ApiResult<SysNavMenuTreeVo> getNavMenuTreeList() throws Exception {
+    public ApiResult<List<SysNavMenuTreeVo>> getNavMenuTreeList() throws Exception {
         List<SysNavMenuTreeVo> list = sysMenuService.getNavMenuTreeList();
         return ApiResult.success(list);
     }
