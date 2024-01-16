@@ -6,5 +6,7 @@ dependencies {
     implementation 'jakarta.servlet:jakarta.servlet-api'
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
     implementation 'io.netty:netty-all'
+    implementation 'com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter'
+    implementation 'com.github.xiaoymin:knife4j-gateway-spring-boot-starter'
 }
 

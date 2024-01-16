@@ -1,8 +1,10 @@
 package io.chou401.system.controller;
 
+import io.chou401.common.enums.SysLogType;
 import io.chou401.common.page.Paging;
 import io.chou401.common.query.sys.SysUserQuery;
 import io.chou401.common.vo.sys.SysUserVo;
+import io.chou401.framework.annotation.Log;
 import io.chou401.framework.annotation.Permission;
 import io.chou401.framework.exception.BusinessException;
 import io.chou401.framework.response.ApiResult;
@@ -117,6 +119,7 @@ public class SysUserController {
      * @return
      * @throws Exception
      */
+    @Log(value = "重置系统用户密码", type = SysLogType.UPDATE)
     @PostMapping("/resetSysUserPassword")
     @Operation(summary = "重置系统用户密码")
     @Permission("sys:user:reset-password")
