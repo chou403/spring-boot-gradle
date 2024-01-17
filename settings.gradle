@@ -1,4 +1,4 @@
-rootProject.name = 'chou401-boot'
+rootProject.name = 'spring-boot-gradle'
 include 'login'
 include 'system'
 include 'common'

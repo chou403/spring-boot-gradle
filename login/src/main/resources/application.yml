@@ -215,7 +215,7 @@ knife4j:
         # 自定义底部
         enable-footer: false
         enable-footer-custom: true
-        footer-custom-content: MIT License | Copyright © 2019-2023 [chou401-boot](https://github.com/chou401/chou401-boot)
+        footer-custom-content: MIT License | Copyright © 2019-2023 [spring-boot-gradle](https://github.com/chou401/spring-boot-gradle)
 openapi:
     title: 登录服务 API
     description: 登录授权接口文档
