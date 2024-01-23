@@ -7,7 +7,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter'
     implementation 'com.baomidou:mybatis-plus-boot-starter'
+    implementation 'com.baomidou:dynamic-datasource-spring-boot3-starter'
     implementation 'org.aspectj:aspectjtools'
     implementation 'com.mysql:mysql-connector-j'
-
 }

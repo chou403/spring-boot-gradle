@@ -48,7 +48,6 @@ import java.util.Properties;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-@SuppressWarnings({"rawtypes"})
 public class MerchantLineInnerInterceptor extends BaseMultiTableInnerInterceptor implements InnerInterceptor {
 
     public static final String MERCHANT_LINE_HANDLER = "merchantLineHandler";
