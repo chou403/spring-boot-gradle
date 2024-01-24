@@ -1,30 +1,21 @@
 package io.chou401.framework.config;
 
-import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.BlockAttackInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.DataPermissionInterceptor;
-import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import io.chou401.framework.config.properties.MerchantLineProperties;
 import io.chou401.framework.mybatis.plugins.handler.DataScopeHandler;
 import io.chou401.framework.mybatis.plugins.handler.MerchantLineHandler;
 import io.chou401.framework.utils.SystemTypeUtil;
 import io.chou401.framework.utils.login.LoginUtil;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.ibatis.logging.stdout.StdOutImpl;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 /**
@@ -37,34 +28,34 @@ import java.util.List;
 @EnableTransactionManagement
 public class MybatisPlusConfig {
 
-    @Resource(name = "dynamicDatasource")
-    private DataSource dynamicDatasource;
+//    @Resource(name = "dynamicDatasource")
+//    private DataSource dynamicDatasource;
 
     private final MerchantLineProperties merchantLineProperties;
 
     public MybatisPlusConfig(MerchantLineProperties merchantLineProperties) {
         this.merchantLineProperties = merchantLineProperties;
     }
-
-    @Bean
-    public SqlSessionFactory sqlSessionFactory() throws Exception {
-        MybatisSqlSessionFactoryBean sqlSessionFactoryBean = new MybatisSqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dynamicDatasource);
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
-
-        MybatisConfiguration configuration = new MybatisConfiguration();
-        configuration.setMapUnderscoreToCamelCase(true);
-        configuration.setCacheEnabled(false);
-        configuration.setLogImpl(StdOutImpl.class);
-        sqlSessionFactoryBean.setConfiguration(configuration);
-
-        return sqlSessionFactoryBean.getObject();
-    }
-
-    @Bean
-    public PlatformTransactionManager platformTransactionManager() {
-        return new DataSourceTransactionManager(dynamicDatasource);
-    }
+//
+//    @Bean
+//    public SqlSessionFactory sqlSessionFactory() throws Exception {
+//        MybatisSqlSessionFactoryBean sqlSessionFactoryBean = new MybatisSqlSessionFactoryBean();
+//        sqlSessionFactoryBean.setDataSource(dynamicDatasource);
+//        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
+//
+//        MybatisConfiguration configuration = new MybatisConfiguration();
+//        configuration.setMapUnderscoreToCamelCase(true);
+//        configuration.setCacheEnabled(false);
+//        configuration.setLogImpl(StdOutImpl.class);
+//        sqlSessionFactoryBean.setConfiguration(configuration);
+//
+//        return sqlSessionFactoryBean.getObject();
+//    }
+//
+//    @Bean
+//    public PlatformTransactionManager platformTransactionManager() {
+//        return new DataSourceTransactionManager(dynamicDatasource);
+//    }
 
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
