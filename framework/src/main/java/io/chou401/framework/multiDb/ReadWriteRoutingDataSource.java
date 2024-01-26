@@ -1,4 +1,4 @@
-package io.chou401.framework.rule;
+package io.chou401.framework.multiDb;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.lang.Nullable;

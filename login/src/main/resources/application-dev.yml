@@ -1,42 +1,42 @@
 # dynamic-datasource 注解 读写分离
-spring:
-  datasource:
-    dynamic:
-      primary: write
-      strict: false
-      datasource:
-        write:
-          url: jdbc:mysql://localhost:3306/master?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
-          username: root
-          password: 123456
-          driver-class-name: com.mysql.cj.jdbc.Driver
-        read1:
-          url: jdbc:mysql://localhost:3306/slave1?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
-          username: root
-          password: 123456
-          driver-class-name: com.mysql.cj.jdbc.Driver
-        read2:
-          url: jdbc:mysql://localhost:3306/slave2?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
-          username: root
-          password: 123456
-          driver-class-name: com.mysql.cj.jdbc.Driver
-      strategy: com.baomidou.dynamic.datasource.strategy.LoadBalanceDynamicDataSourceStrategy
-
-# 自定义配置 多数据源 读写分离
 #spring:
 #  datasource:
-#    write:
-#      jdbc-url: jdbc:mysql://localhost:3306/master?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
-#      username: root
-#      password: 123456
-#    read1:
-#      jdbc-url: jdbc:mysql://localhost:3306/slave1?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
-#      username: root
-#      password: 123456
-#    read2:
-#      jdbc-url: jdbc:mysql://localhost:3306/slave2?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
-#      username: root
-#      password: 123456
+#    dynamic:
+#      primary: write
+#      strict: false
+#      datasource:
+#        write:
+#          url: jdbc:mysql://localhost:3306/master?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+#          username: root
+#          password: 123456
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#        read1:
+#          url: jdbc:mysql://localhost:3306/slave1?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+#          username: root
+#          password: 123456
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#        read2:
+#          url: jdbc:mysql://localhost:3306/slave2?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+#          username: root
+#          password: 123456
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#      strategy: com.baomidou.dynamic.datasource.strategy.LoadBalanceDynamicDataSourceStrategy
+
+# 自定义配置 多数据源 读写分离
+spring:
+  datasource:
+    write:
+      jdbc-url: jdbc:mysql://localhost:3306/boot?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 3306
+    read1:
+      jdbc-url: jdbc:mysql://localhost:3307/boot?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 3307
+    read2:
+      jdbc-url: jdbc:mysql://localhost:3308/boot?allowPublicKeyRetrieval=True&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 3308
 
   data:
     redis:

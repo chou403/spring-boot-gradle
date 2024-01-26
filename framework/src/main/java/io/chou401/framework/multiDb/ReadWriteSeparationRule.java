@@ -1,4 +1,4 @@
-package io.chou401.framework.rule;
+package io.chou401.framework.multiDb;
 
 import io.chou401.common.enums.ReadsAndWrite;
 
@@ -33,7 +33,7 @@ public class ReadWriteSeparationRule {
      * 读简单的1:2权重负载均衡
      */
     public static void reader() {
-        int index = counter.getAndIncrement() % 3;
+        int index = counter.incrementAndGet() % 3;
         if (counter.get() > 1000) {
             counter.set(-1);
         }
