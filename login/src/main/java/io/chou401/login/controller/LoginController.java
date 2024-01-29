@@ -80,5 +80,4 @@ public class LoginController {
         CookieUtil.deleteCookie(LoginConstant.ADMIN_COOKIE_TOKEN_NAME, request, response);
         return ApiResult.success();
     }
-
 }

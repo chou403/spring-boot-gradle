@@ -24,7 +24,7 @@ ext {
                     "hutoolVersion"                : '5.8.24',
                     "easyexcelVersion"             : '3.3.3',
                     "junitJupiterVersion"          : '5.8.1',
-                    "snakeyamlVersion"             : '2.2',
+                    "snakeyamlVersion"             : '1.33',
                     "jakartaServletApiVersion"     : '6.0.0',
                     "springCloudGatewayVersion"    : '4.0.8',
                     "nettyAllVersion"              : '4.1.101.Final',
@@ -35,12 +35,7 @@ ext {
 
                     "shardingJdbcVersion"          : '5.4.1',
 
-//                    "reactorNettyHttpVersion"      : '1.1.14',
-//                    "reactorNettyCoreVersion"      : '1.1.14',
-//                    "commonsCompressVersion"       : '1.25.0',
-//                    "logbackCoreVersion"           : '1.4.14',
-//                    "logbackClassic"               : '1.4.14',
-//                    "bcprovJdk18onVersion"         : '1.77',
+                    "jaxbVersion"                  : '2.3.0'
 
             ]
 
@@ -81,12 +76,9 @@ ext {
 
                     "shardingJdbc"          : "org.apache.shardingsphere:shardingsphere-jdbc-core:$version.shardingJdbcVersion",
 
-//                    "reactorNettyHttp"      : "io.projectreactor.netty:reactor-netty-http:$version.reactorNettyHttpVersion",
-//                    "reactorNettyCore"      : "io.projectreactor.netty:reactor-netty-core:$version.reactorNettyCoreVersion",
-//                    "commonsCompress"       : "org.apache.commons:commons-compress:$version.commonsCompressVersion",
-//                    "logbackCore"           : "ch.qos.logback:logback-core:$version.logbackCoreVersion",
-//                    "logbackClassic"        : "ch.qos.logback:logback-classic:$version.logbackClassicVersion",
-//                    "bcprovJdk18on"         : "org.bouncycastle:bcprov-jdk18on:$version.bcprovJdk18onVersion",
+                    "jaxbCore"              : "com.sun.xml.bind:jaxb-core:$version.jaxbVersion",
+                    "jaxbApi"               : "javax.xml.bind:jaxb-api:$version.jaxbVersion",
+                    "jaxbImpl"              : "com.sun.xml.bind:jaxb-impl:$version.jaxbVersion",
 
 
             ]

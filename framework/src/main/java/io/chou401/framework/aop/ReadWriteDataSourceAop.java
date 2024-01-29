@@ -2,10 +2,8 @@ package io.chou401.framework.aop;
 
 import io.chou401.framework.multiDb.ReadWriteSeparationRule;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.stereotype.Component;
 
 /**
  * {@code @author}  chou401
@@ -13,8 +11,8 @@ import org.springframework.stereotype.Component;
  * {@code @description} 读写分离 aop
  */
 @Slf4j
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class ReadWriteDataSourceAop {
 
     @Pointcut("!@annotation(io.chou401.framework.annotation.Writer) " +
