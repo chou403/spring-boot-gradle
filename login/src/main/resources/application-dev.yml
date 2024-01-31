@@ -20,6 +20,9 @@
 #          username: root
 #          password: 3308
 #          driver-class-name: com.mysql.cj.jdbc.Driver
+#        sharding:
+#          url: jdbc:shardingsphere:classpath:sharding-config.yaml
+#          driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
 #      strategy: com.baomidou.dynamic.datasource.strategy.LoadBalanceDynamicDataSourceStrategy
 
 # 自定义配置 多数据源 读写分离
@@ -71,3 +74,6 @@ logback-spring:
   # 日志文件目录
   path: logs
 
+
+pagehelper:
+  helper-dialect: mysql

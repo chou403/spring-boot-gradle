@@ -21,7 +21,6 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-webmvc-core'
     implementation 'org.apache.commons:commons-text'
 
-
 }
 
 jar {

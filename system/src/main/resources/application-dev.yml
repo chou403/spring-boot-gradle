@@ -67,3 +67,5 @@ logback-spring:
   # 日志文件目录
   path: logs
 
+pagehelper:
+  helper-dialect: mysql
