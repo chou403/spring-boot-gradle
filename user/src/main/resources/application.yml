@@ -139,7 +139,7 @@ login:
 
 # jwt 加密密钥
 jwt:
-    secret: secretKey:1deNgweIPiNg994IsCoOL2223
+    secret: secretKey:e10adc3949ba59abbe56e057f20f883e
 
 # 日志AOP配置
 log-aop:

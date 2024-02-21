@@ -7,7 +7,6 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import io.chou401.framework.exception.NotAuthException;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -19,11 +18,7 @@ import java.util.Map;
  */
 public class JwtUtil {
 
-    @Value("${login.admin.token-expire-minutes}")
-    private static int expireDate;
-
-    @Value("${jwt.secret}")
-    private static String SECRET_KEY;
+    private static final String SECRET_KEY = "secretKey:e10adc3949ba59abbe56e057f20f883e";
 
     /**
      * 生成jwt
@@ -32,8 +27,8 @@ public class JwtUtil {
         Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
         // 获取日历对象
         Calendar nowTime = Calendar.getInstance();
-        // 默认过期时间
-        nowTime.add(Calendar.MINUTE, expireDate);
+        // 默认1天过期时间
+        nowTime.add(Calendar.DATE, 1);
         // 得到过期时间
         Date expireTime = nowTime.getTime();
         // 设置header信息
@@ -85,6 +80,5 @@ public class JwtUtil {
         DecodedJWT decodedJWT = JWT.decode(token);
         return decodedJWT.getClaims();
     }
-
 
 }
