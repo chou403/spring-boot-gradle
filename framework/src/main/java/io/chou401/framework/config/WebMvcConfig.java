@@ -98,7 +98,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         TraceIdLogFilter traceIdLogFilter = new TraceIdLogFilter();
         filterRegistrationBean.setFilter(traceIdLogFilter);
-        filterRegistrationBean.setUrlPatterns(Arrays.asList("/*"));
+        filterRegistrationBean.setUrlPatterns(List.of("/*"));
         return filterRegistrationBean;
     }
 

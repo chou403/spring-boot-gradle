@@ -137,6 +137,10 @@ login:
         include-paths:
             - /common/**
 
+# jwt 加密密钥
+jwt:
+    secret: secretKey:1deNgweIPiNg994IsCoOL2223
+
 # 日志AOP配置
 log-aop:
     # 是否启用
