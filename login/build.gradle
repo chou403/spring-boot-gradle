@@ -5,6 +5,11 @@ dependencies {
     api project(':framework')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
+//    implementation ('org.springframework.cloud:spring-cloud-starter-loadbalancer') {
+//        exclude(module: 'spring-cloud-starter-netflix-ribbon')
+//    }
+
     implementation 'com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter'
     implementation 'com.baomidou:mybatis-plus-boot-starter'
 //    implementation 'com.baomidou:dynamic-datasource-spring-boot3-starter'

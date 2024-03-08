@@ -3,6 +3,8 @@ ext {
     version =
             [
                     "openfeignVersion"             : '4.0.4',
+                    "loadBalancerVersion"             : '4.0.4',
+
                     "lombokVersion"                : '1.18.30',
                     "mysqlConnectorJavaVersion"    : '8.2.0',
                     "mybatisPlusBootStarterVersion": '3.5.4.1',
@@ -43,7 +45,9 @@ ext {
 
     dependencies =
             [
+
                     "openfeign"             : "org.springframework.cloud:spring-cloud-starter-openfeign:$version.openfeignVersion",
+                    "loadBalancer"          : "org.springframework.cloud:spring-cloud-starter-loadbalancer:$version.loadBalancerVersion",
 
                     "lombok"                : "org.projectlombok:lombok:$version.lombokVersion",
                     "mysqlConnectorJava"    : "com.mysql:mysql-connector-j:$version.mysqlConnectorJavaVersion",
